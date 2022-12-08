@@ -5,15 +5,15 @@ import { AiFillLinkedin } from "react-icons/ai";
 const Main = () => {
   return (
     <React.Fragment>
-      <div className="flex flex-col w-full py-10 px-3 gap-3">
+      <div className="flex flex-col w-full py-10 px-4 gap-3">
         <p className="text-xl font-bold md:text-2xl lg:text-3xl">
-          Hi, I'm <span className=" text-blue-500">Eliezer</span>
+          Hi, I'm <span className=" text-blue-500">Eliezer!</span>
         </p>
-        <p className="text-sm md:text-lg lg:text-2xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          in aliquid eius? Nam ipsum ad velit! Quos accusamus laboriosam fugit
-          asperiores, amet consequuntur maxime rerum magni unde, excepturi
-          ipsum! Earum.
+        <p className="text-sm md:text-lg lg:text-xl">
+          Focused, creative and enthusiastic developer who has a passion for
+          building web applications and a keen interest in analytics. I am
+          always curious to learn and experience new concepts & skills to
+          improve my coding experience and become a better developer.
         </p>
         <div className="flex">
           <FaGithubSquare size={29} className="cursor-pointer" />
