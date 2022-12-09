@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import AboutMe from "../components/AboutMe";
 import Main from "../components/Main";
+import Skills from "../components/Skills";
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
       </section>
       <section>
         <AboutMe />
+      </section>
+      <section>
+        <Skills />
       </section>
     </div>
   );

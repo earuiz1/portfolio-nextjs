@@ -17,6 +17,7 @@ const AboutMe = () => {
             alt="Web Developer Coding"
             width={200}
             heigth={200}
+            className="rounded-md"
           />
           <div className="flex flex-col gap-2">
             <p className="text-sm md:text-lg lg:text-xl">
