@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrFormClose } from "react-icons/gr";
+import { TbLetterE } from "react-icons/tb";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,26 +19,31 @@ const Navbar = () => {
 
   return (
     <React.Fragment>
-      <div className="bg-[#1d3557] flex justify-between align-center px-4 py-4">
-        <div className="flex items-center">
-          <h1 className=" text-slate-100">Personal Portfolio</h1>
-        </div>
-        <div className="cursor-pointer md:hidden text-slate-100">
+      {/* <div className="bg-[#1d3557] flex justify-between align-center px-4 py-4"> */}
+      <div className="absolute w-full flex justify-between align-center px-4 py-4">
+        <div className="flex items-center">Logo goes here</div>
+        <div className="cursor-pointer md:hidden text-slate-800">
           <GiHamburgerMenu size={25} onClick={hamburgerIconHandler} />
         </div>
         <ul className="hidden md:flex flex-row items-center text-sky-400 text-base font-semibold gap-3">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/AboutMe">About Me</Link>
-          </li>
-          <li>
-            <Link href="/">Skills</Link>
-          </li>
-          <li>
-            <Link href="/">Projects</Link>
-          </li>
+          <Link href="#main__section">
+            <li>Home</li>
+          </Link>
+
+          <Link href="#about_me__section">
+            <li>About Me</li>
+          </Link>
+
+          <Link href="#skills__section">
+            <li>Skills</li>
+          </Link>
+
+          <Link href="/">
+            <li>Projects</li>
+          </Link>
+          <Link href="/">
+            <li>Contact Me</li>
+          </Link>
           <li>
             <button className="bg-slate-100 text-slate-900 px-2 py-2 rounded-xl">
               Resume

@@ -15,15 +15,12 @@ export default function Home() {
       <nav>
         <Navbar />
       </nav>
-      <section>
-        <Main />
-      </section>
-      <section>
-        <AboutMe />
-      </section>
-      <section>
-        <Skills />
-      </section>
+
+      <Main />
+
+      <AboutMe />
+
+      <Skills />
     </div>
   );
 }
