@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import ContactImg from "../public/assets/contactWeb.jpeg";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const ContactMe = () => {
+  /* Setting the initial values of the form using formik */
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+
+    /* Validating the form using yup */
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .max(20, "Name must be 20 characters long!")
+        .required("Name is required"),
+      email: Yup.string()
+        .email("Invalid email address!")
+        .required("Email is required"),
+      subject: Yup.string()
+        .max(20, "Subject must be 20 characters long!")
+        .required("Subject is required"),
+      message: Yup.string()
+        .max(200, "Message must be 200 characters long!")
+        .required("Message is required"),
+    }),
+
+    /*Submitting the form */
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+
   return (
     <React.Fragment>
       <section className="w-full h-screen">
@@ -43,45 +76,96 @@ const ContactMe = () => {
               </div>
             </div>
             {/* Inner Container 2 */}
-            <div className="flex flex-col gap-4 lg:w-[50%]">
-              <form>
-                <div className="flex flex-col gap-2">
-                  <label className="text-sm">Name</label>
+            <div className="flex flex-col lg:w-[50%]">
+              <form onSubmit={formik.handleSubmit}>
+                <div className="flex flex-col gap-2 mb-2">
+                  <label className="text-sm" htmlFor="name">
+                    Name
+                  </label>
                   <input
                     type="text"
-                    className="border border-gray-500 rounded-md py-2 indent-2"
+                    name="name"
+                    className={`border rounded-md py-2 indent-2 ${
+                      formik.errors.name ? "border-red-500" : "border-gray-500"
+                    }`}
+                    value={formik.values.name}
+                    onChange={formik.handleChange}
                   />
+                  {formik.errors.name ? (
+                    <p className="text-sm text-red-500">{formik.errors.name}</p>
+                  ) : (
+                    ""
+                  )}
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-sm">Email</label>
+                <div className="flex flex-col gap-2 mb-2">
+                  <label className="text-sm" htmlFor="email">
+                    Email
+                  </label>
                   <input
                     type="email"
-                    className="border border-gray-500 rounded-md py-2 indent-2"
+                    name="email"
+                    className={`border rounded-md py-2 indent-2 ${
+                      formik.errors.email ? "border-red-500" : "border-gray-500"
+                    }`}
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
                   />
+                  {formik.errors.email ? (
+                    <p className="text-sm text-red-500">
+                      {formik.errors.email}
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-sm">Phone Number</label>
-                  <input
-                    type="number"
-                    className="border border-gray-500 rounded-md py-2 indent-2"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-sm">Subject</label>
+                <div className="flex flex-col gap-2 mb-2">
+                  <label className="text-sm" htmlFor="subject">
+                    Subject
+                  </label>
                   <input
                     type="text"
-                    className="border border-gray-500 rounded-md py-2 indent-2"
+                    name="subject"
+                    className={`border rounded-md py-2 indent-2 ${
+                      formik.errors.subject
+                        ? "border-red-500"
+                        : "border-gray-500"
+                    }`}
+                    value={formik.values.subject}
+                    onChange={formik.handleChange}
                   />
+                  {formik.errors.subject ? (
+                    <p className="text-sm text-red-500">
+                      {formik.errors.subject}
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label className="text-sm">Message</label>
+                <div className="flex flex-col gap-2 mb-2">
+                  <label className="text-sm" htmlFor="message">
+                    Message
+                  </label>
                   <textarea
-                    className="resize-none border border-gray-500 rounded-md py-2 indent-2"
+                    name="message"
+                    onChange={formik.handleChange}
+                    value={formik.values.message}
+                    className={`resize-none border rounded-md py-2 indent-2 ${
+                      formik.errors.message
+                        ? "border-red-500"
+                        : "border-gray-500"
+                    }`}
                     cols="30"
                     rows="4"
                   ></textarea>
+                  {formik.errors.message ? (
+                    <p className="text-sm text-red-500">
+                      {formik.errors.message}
+                    </p>
+                  ) : (
+                    ""
+                  )}
                 </div>
-                <div className="flex grow mt-2">
+                <div className="flex grow mt-4">
                   <button className="bg-indigo-600 py-3 rounded-md text-slate-100 w-full">
                     Submit
                   </button>
@@ -90,84 +174,6 @@ const ContactMe = () => {
             </div>
           </div>
         </div>
-        {/* <div className="flex flex-col max-w-6xl items-center sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="flex flex-col p-6 mr-2 bg-blue-500 rounded-lg">
-                <h1 className="text-4xl sm:text-5xl text-slate-100 font-extrabold tracking-tight">
-                  Get in touch
-                </h1>
-                <p className="text-normal text-lg sm:text-2xl font-medium text-slate-100 mt-2">
-                  Fill in the form to start a conversation
-                </p>
-
-                <div className="flex items-center mt-8 text-slate-100">
-                  <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                    Acme Inc, Street, State, Postal Code
-                  </div>
-                </div>
-
-                <div className="flex items-center mt-4 text-slate-100">
-                  <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                    +44 1234567890
-                  </div>
-                </div>
-
-                <div className="flex items-center mt-2 text-slate-100">
-                  <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                    info@acme.org
-                  </div>
-                </div>
-              </div>
-
-              <form className="flex flex-col justify-center py-6 px-4 gap-4">
-                <div className="flex flex-col">
-                  <label htmlFor="name" className="hidden">
-                    Full Name
-                  </label>
-                  <input
-                    type="name"
-                    name="name"
-                    id="name"
-                    placeholder="Full Name"
-                    className="w-100 py-3 px-3 rounded-lg bg-white border border-gray-400 font-semibold focus:border-indigo-500 focus:outline-none"
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <label htmlFor="email" className="hidden">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                    className="w-100  py-3 px-3 rounded-lg bg-white  border border-gray-400 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
-                  />
-                </div>
-
-                <div className="flex flex-col">
-                  <label htmlFor="tel" className="hidden">
-                    Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="tel"
-                    id="tel"
-                    placeholder="Telephone Number"
-                    className="w-100 py-3 px-3 rounded-lg bg-white  border border-gray-400 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="md:w-32 bg-indigo-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-2 hover:bg-indigo-500 transition ease-in-out duration-300"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div> */}
       </section>
     </React.Fragment>
   );
