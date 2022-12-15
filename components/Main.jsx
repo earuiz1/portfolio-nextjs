@@ -8,7 +8,7 @@ const Main = () => {
   return (
     <React.Fragment>
       <section className="realtive flex h-screen" id="main__section">
-        <div className="flex flex-col justify-center w-full px-4 gap-3">
+        <div className="flex flex-col justify-center px-4 gap-3">
           <p className="text-xl text-slate-900 font-bold md:text-2xl lg:text-3xl">
             Hi, I'm <span className=" text-blue-500">Eliezer!</span>
           </p>

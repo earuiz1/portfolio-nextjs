@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import AboutMe from "../components/AboutMe";
 import Main from "../components/Main";
 import Skills from "../components/Skills";
+import ContactMe from "../components/ContactMe";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       <AboutMe />
 
       <Skills />
+
+      <ContactMe />
     </div>
   );
 }
