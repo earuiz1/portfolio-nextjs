@@ -3,37 +3,43 @@ import Image from "next/image";
 import ContactImg from "../public/assets/contactWeb.jpeg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+// import { sendContactForm } from "../lib/api";
 
 const ContactMe = () => {
   /* Setting the initial values of the form using formik */
+
+  const onSubmit = async (values, { resetForm }) => {
+    console.log(values);
+    // await sendContactForm(values);
+    // resetForm({ values: "" });
+  };
+
+  const initialValues = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+
+  const validationSchema = Yup.object({
+    name: Yup.string()
+      .max(20, "Name must be 20 characters long!")
+      .required("Name is required"),
+    email: Yup.string()
+      .email("Invalid email address!")
+      .required("Email is required"),
+    subject: Yup.string()
+      .max(30, "Subject must be 20 characters long!")
+      .required("Subject is required"),
+    message: Yup.string()
+      .max(200, "Message must be 200 characters long!")
+      .required("Message is required"),
+  });
+
   const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-
-    /* Validating the form using yup */
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .max(20, "Name must be 20 characters long!")
-        .required("Name is required"),
-      email: Yup.string()
-        .email("Invalid email address!")
-        .required("Email is required"),
-      subject: Yup.string()
-        .max(20, "Subject must be 20 characters long!")
-        .required("Subject is required"),
-      message: Yup.string()
-        .max(200, "Message must be 200 characters long!")
-        .required("Message is required"),
-    }),
-
-    /*Submitting the form */
-    onSubmit: (values) => {
-      console.log(values);
-    },
+    initialValues,
+    validationSchema,
+    onSubmit,
   });
 
   return (
@@ -76,7 +82,7 @@ const ContactMe = () => {
               </div>
             </div>
             {/* Inner Container 2 */}
-            <div className="flex flex-col lg:w-[50%]">
+            <div className="flex flex-col lg:justify-center lg:w-[50%]">
               <form onSubmit={formik.handleSubmit}>
                 <div className="flex flex-col gap-2 mb-2">
                   <label className="text-sm" htmlFor="name">
@@ -166,7 +172,10 @@ const ContactMe = () => {
                   )}
                 </div>
                 <div className="flex grow mt-4">
-                  <button className="bg-indigo-600 py-3 rounded-md text-slate-100 w-full">
+                  <button
+                    type="submit"
+                    className="bg-indigo-600 py-3 rounded-md text-slate-100 w-full"
+                  >
                     Submit
                   </button>
                 </div>
