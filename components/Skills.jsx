@@ -319,7 +319,7 @@ const Skills = () => {
   ];
   return (
     <React.Fragment>
-      <section id="skills__section">
+      <section id="skills">
         <div className="bg-[#001845] w-full py-4">
           <h2 className="text-slate-100 text-lg font-semibold md:text-2xl lg:text-2xl px-4">
             Skills

@@ -26,22 +26,22 @@ const Navbar = () => {
           <GiHamburgerMenu size={25} onClick={hamburgerIconHandler} />
         </div>
         <ul className="hidden md:flex flex-row items-center text-sky-400 text-base font-semibold gap-3">
-          <Link href="#main__section">
+          <Link href="#main">
             <li>Home</li>
           </Link>
 
-          <Link href="#about_me__section">
+          <Link href="#about">
             <li>About Me</li>
           </Link>
 
-          <Link href="#skills__section">
+          <Link href="#skills">
             <li>Skills</li>
           </Link>
 
           <Link href="/">
             <li>Projects</li>
           </Link>
-          <Link href="/">
+          <Link href="#contact">
             <li>Contact Me</li>
           </Link>
           <li>

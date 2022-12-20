@@ -7,7 +7,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const Main = () => {
   return (
     <React.Fragment>
-      <section className="realtive flex h-screen" id="main__section">
+      <section className="realtive flex h-screen" id="main">
         <div className="flex flex-col justify-center px-4 gap-3">
           <p className="text-xl text-slate-900 font-bold md:text-2xl lg:text-3xl">
             Hi, I'm <span className=" text-blue-500">Eliezer!</span>
@@ -23,15 +23,19 @@ const Main = () => {
             <AiFillLinkedin size={30} className="cursor-pointer" />
           </div>
           <div className="flex gap-3">
-            <button className="bg-[#1d3557] text-slate-100 text-sm py-3 px-2 rounded-lg shadow-slate-800 shadow-md">
-              Read More
-            </button>
-            <button className="bg-[#1d3557] text-slate-100 text-sm py-3 px-2 rounded-lg shadow-slate-800 shadow-md">
-              Contact Me
-            </button>
+            <Link href="#about">
+              <button className="bg-[#1d3557] text-slate-100 text-sm py-3 px-2 rounded-lg shadow-slate-800 shadow-md">
+                Read More
+              </button>
+            </Link>
+            <Link href="#contact">
+              <button className="bg-[#1d3557] text-slate-100 text-sm py-3 px-2 rounded-lg shadow-slate-800 shadow-md">
+                Contact Me
+              </button>
+            </Link>
           </div>
           <div className="flex absolute bottom-0 left-2/4 text-slate-50">
-            <Link href="#about_me__section">
+            <Link href="#about">
               <IoIosArrowDown size={40} />
             </Link>
           </div>

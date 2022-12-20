@@ -16,13 +16,7 @@ html{
   box-sizing: border-box;
 }
 
-/* #main__section{
-  background: linear-gradient(132deg, #05219f, #0743bd, #1d61aa);
-    background-size: 400% 400%;
-    animation: Gradient 25s ease infinite;
-} */
-
-#main__section{
+#main{
   background-image: url(../public/assets/wave.svg);
   background-repeat: no-repeat;
   background-position: bottom;

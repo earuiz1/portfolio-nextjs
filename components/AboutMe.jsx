@@ -5,7 +5,7 @@ import heroImage from "../public/assets/Hero.png";
 const AboutMe = () => {
   return (
     <React.Fragment>
-      <section id="about_me__section">
+      <section id="about">
         <div className="bg-[#001845] w-full py-4">
           <h2 className="text-slate-100 text-lg font-semibold md:text-2xl lg:text-2xl px-4">
             About Me

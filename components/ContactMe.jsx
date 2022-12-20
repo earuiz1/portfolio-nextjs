@@ -51,7 +51,7 @@ const ContactMe = () => {
 
   return (
     <React.Fragment>
-      <section className="w-full h-screen">
+      <section id="contact" className="w-full h-screen">
         <div className="bg-[#001845] w-full py-4 mb-8">
           <h2 className="text-slate-100 text-lg font-semibold md:text-2xl lg:text-2xl px-4">
             Contact Me
