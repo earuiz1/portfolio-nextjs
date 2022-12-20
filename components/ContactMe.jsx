@@ -6,14 +6,19 @@ import * as Yup from "yup";
 import { sendContactForm } from "../lib/api";
 
 const ContactMe = () => {
-  /* Setting the initial values of the form using formik */
-
+  /**
+   * The function is called when the form is submitted. It takes the values from the form and sends them
+   * to the sendContactForm function. Then it resets the form.
+   */
   const onSubmit = async (values, { resetForm }) => {
-    console.log(values);
+    //console.log(values);
     await sendContactForm(values);
-    // resetForm({ values: "" });
+
+    //Reseting the form inputs fields after submission
+    resetForm({ values: "" });
   };
 
+  /* Setting the initial values of the form using formik. */
   const initialValues = {
     name: "",
     email: "",
@@ -21,6 +26,7 @@ const ContactMe = () => {
     message: "",
   };
 
+  /* Validating the form inputs using yup. */
   const validationSchema = Yup.object({
     name: Yup.string()
       .max(20, "Name must be 20 characters long!")
@@ -36,6 +42,7 @@ const ContactMe = () => {
       .required("Message is required"),
   });
 
+  /* Setting the initial values of the form using formik. */
   const formik = useFormik({
     initialValues,
     validationSchema,
