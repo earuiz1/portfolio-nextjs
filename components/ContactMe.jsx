@@ -3,14 +3,14 @@ import Image from "next/image";
 import ContactImg from "../public/assets/contactWeb.jpeg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-// import { sendContactForm } from "../lib/api";
+import { sendContactForm } from "../lib/api";
 
 const ContactMe = () => {
   /* Setting the initial values of the form using formik */
 
   const onSubmit = async (values, { resetForm }) => {
     console.log(values);
-    // await sendContactForm(values);
+    await sendContactForm(values);
     // resetForm({ values: "" });
   };
 
