@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import ContactImg from "../public/assets/contactWeb.jpeg";
 import { useFormik } from "formik";
@@ -10,12 +12,32 @@ const ContactMe = () => {
    * The function is called when the form is submitted. It takes the values from the form and sends them
    * to the sendContactForm function. Then it resets the form.
    */
-  const onSubmit = async (values, { resetForm }) => {
-    //console.log(values);
-    await sendContactForm(values);
 
-    //Reseting the form inputs fields after submission
-    resetForm({ values: "" });
+  const [error, setError] = useState(null);
+
+  const onSubmit = async (values, { resetForm }) => {
+    try {
+      await sendContactForm(values);
+
+      //Show toast
+      toast.success("Message sent!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
+      setError(null);
+
+      //Reseting the form inputs fields after submission
+      resetForm({ values: "" });
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   /* Setting the initial values of the form using formik. */
@@ -53,7 +75,7 @@ const ContactMe = () => {
     <React.Fragment>
       <section id="contact" className="w-full h-screen">
         <div className="bg-[#001845] w-full py-4 mb-8">
-          <h2 className="text-slate-100 text-lg font-semibold md:text-2xl lg:text-2xl px-4">
+          <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
             Contact Me
           </h2>
         </div>
@@ -81,7 +103,7 @@ const ContactMe = () => {
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm md:text-base lg:text-lg">
+                  <p className="text-sm md:text-base md:leading-tight lg:text-lg lg:leading-tight ">
                     Please free to reach me for any questions, freelance and
                     full-time positions.
                   </p>
@@ -91,6 +113,11 @@ const ContactMe = () => {
             {/* Inner Container 2 */}
             <div className="flex flex-col lg:justify-center lg:w-[50%]">
               <form onSubmit={formik.handleSubmit}>
+                {error && (
+                  <span className="font-bold text-red-600 uppercase">
+                    {error}
+                  </span>
+                )}
                 <div className="flex flex-col gap-2 mb-2">
                   <label className="text-sm" htmlFor="name">
                     Name
@@ -181,7 +208,7 @@ const ContactMe = () => {
                 <div className="flex grow mt-4">
                   <button
                     type="submit"
-                    className="bg-indigo-600 py-3 rounded-md text-slate-100 w-full"
+                    className="bg-indigo-600 font-semibold py-3 rounded-md text-slate-100 w-full hover:bg-indigo-500"
                   >
                     Submit
                   </button>

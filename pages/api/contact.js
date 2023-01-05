@@ -32,7 +32,7 @@ const handler = async (req, res) => {
   }
 
   /* Returning a JSON object with a message property set to the error message. */
-  return res.status(400).json({ message: error.message });
+  return res.status(400).json({ message: "Bad Request!" });
 };
 
 export default handler;

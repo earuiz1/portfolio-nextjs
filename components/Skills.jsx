@@ -321,13 +321,15 @@ const Skills = () => {
     <React.Fragment>
       <section id="skills">
         <div className="bg-[#001845] w-full py-4">
-          <h2 className="text-slate-100 text-lg font-semibold md:text-2xl lg:text-2xl px-4">
+          <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
             Skills
           </h2>
         </div>
         <div className="flex flex-col max-w-[90%] gap-10 mx-auto py-8">
-          <div className="flex flex-col border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
-            <div className="border-b border-slate-400 py-2 px-2">Langauges</div>
+          <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
+            <div className="border-b border-slate-400 py-2 px-2">
+              <h3 className="font-bold">Langauges</h3>
+            </div>
             <div className="grid grid-rows-2 grid-cols-4 md:grid-rows-1 md:grid-cols-5 lg:grid-rows-1 lg:grid-cols-5 py-8">
               {languagesList.map((language) => {
                 return (
@@ -336,14 +338,16 @@ const Skills = () => {
                     className="flex flex-col items-center gap-2"
                   >
                     {language.icon}
-                    {language.name}
+                    <span className="text-sm">{language.name}</span>
                   </div>
                 );
               })}
             </div>
           </div>
-          <div className="flex flex-col border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
-            <div className="border-b border-slate-400 py-2 px-2">Databases</div>
+          <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
+            <div className="border-b border-slate-400 py-2 px-2">
+              <h3 className="font-bold">Databases</h3>
+            </div>
             <div className="grid grid-rows-1 grid-cols-3 py-8">
               {databasesList.map((database) => {
                 return (
@@ -352,15 +356,15 @@ const Skills = () => {
                     className="flex flex-col items-center gap-2"
                   >
                     {database.icon}
-                    {database.name}
+                    <span className="text-sm">{database.name}</span>
                   </div>
                 );
               })}
             </div>
           </div>
-          <div className="flex flex-col border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
+          <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
             <div className="border-b border-slate-400 py-2 px-2">
-              Libraries & Frameworks
+              <h3 className="font-bold">Libraries & Frameworks</h3>
             </div>
             <div className="grid grid-rows-2 grid-cols-4 md:grid-rows-1 md:grid-cols-5 lg:grid-rows-1 lg:grid-cols-6 py-8 gap-y-4">
               {libraries_frameworks_List.map((lib_fram) => {
@@ -370,15 +374,15 @@ const Skills = () => {
                     className="flex flex-col items-center gap-2"
                   >
                     {lib_fram.icon}
-                    {lib_fram.name}
+                    <span className="text-sm">{lib_fram.name}</span>
                   </div>
                 );
               })}
             </div>
           </div>
-          <div className="flex flex-col border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
+          <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
             <div className="border-b border-slate-400 py-2 px-2">
-              Tools & Software
+              <h3 className="font-bold">Tools & Software</h3>
             </div>
             <div className="grid grid-rows-1 grid-cols-3 py-8">
               {toolsList.map((tool) => {
@@ -388,7 +392,7 @@ const Skills = () => {
                     className="flex flex-col items-center gap-2"
                   >
                     {tool.icon}
-                    {tool.name}
+                    <span className="text-sm">{tool.name}</span>
                   </div>
                 );
               })}

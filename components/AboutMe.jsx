@@ -5,9 +5,9 @@ import heroImage from "../public/assets/Hero.png";
 const AboutMe = () => {
   return (
     <React.Fragment>
-      <section id="about">
+      <section id="about" className="flex flex-col h-screen">
         <div className="bg-[#001845] w-full py-4">
-          <h2 className="text-slate-100 text-lg font-semibold md:text-2xl lg:text-2xl px-4">
+          <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
             About Me
           </h2>
         </div>

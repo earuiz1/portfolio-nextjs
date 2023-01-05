@@ -34,11 +34,11 @@ const Main = () => {
               </button>
             </Link>
           </div>
-          <div className="flex absolute bottom-0 left-2/4 text-slate-50">
-            <Link href="#about">
-              <IoIosArrowDown size={40} />
-            </Link>
-          </div>
+        </div>
+        <div className="absolute bottom-0 left-2/4 text-slate-50">
+          <Link href="#about">
+            <IoIosArrowDown size={35} />
+          </Link>
         </div>
       </section>
     </React.Fragment>
