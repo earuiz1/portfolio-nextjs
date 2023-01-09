@@ -4,7 +4,7 @@ import AboutMe from "../components/AboutMe";
 import Main from "../components/Main";
 import Skills from "../components/Skills";
 import ContactMe from "../components/ContactMe";
-import Projects from "../components/Projects";
+import ProjectList from "../components/Projects/ProjectList";
 import { ToastContainer } from "react-toastify";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       <Main />
       <AboutMe />
       <Skills />
-      <Projects />
+      <ProjectList />
       <ContactMe />
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
+import ProjectItem from "./ProjectItem";
 
-const Projects = () => {
+const ProjectList = () => {
   return (
     <section>
       <div className="bg-[#001845] w-full py-4">
@@ -8,8 +9,11 @@ const Projects = () => {
           Personal Projects
         </h2>
       </div>
+      <div className="grid grid-cols-1 place-items-center py-8 gap-y-6">
+        <ProjectItem />
+      </div>
     </section>
   );
 };
 
-export default Projects;
+export default ProjectList;
