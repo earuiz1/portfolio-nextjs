@@ -9,7 +9,7 @@ const ProjectList = () => {
           Personal Projects
         </h2>
       </div>
-      <div className="grid grid-cols-1 place-items-center py-8 gap-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-20 mx-4 gap-y-6 gap-x-4">
         <ProjectItem />
       </div>
     </section>

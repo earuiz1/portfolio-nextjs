@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import heroImage from "../public/assets/Hero.png";
 
 const AboutMe = () => {
   return (
     <React.Fragment>
-      <section id="about" className="flex flex-col h-screen">
+      <section id="about">
         <div className="bg-[#001845] w-full py-4">
           <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
             About Me
           </h2>
         </div>
-        <div className="flex flex-col items-center gap-5 md:flex-row md:justify-center lg:flex-row lg:justify-center mx-4 my-4">
+
+        <div className="flex flex-col items-center gap-5 md:flex-row md:justify-center lg:flex-row lg:justify-center mx-4 my-40">
           <Image
             src={heroImage}
             alt="Web Developer Coding"

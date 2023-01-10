@@ -60,7 +60,7 @@ const Navbar = () => {
       </div>
       {isMenuOpen && (
         <div className="fixed left-0 top-0 w-full h-screen bg-black/70 md:hidden">
-          <div className="fixed left-0 top-0 w-[60%] h-screen bg-[#edf6f9] md">
+          <div className="fixed left-0 top-0 w-[80%] h-screen bg-[#edf6f9]">
             <div className="flex justify-between items-center mx-4 py-4 border-b border-gray-400">
               <h1>Personal Portfolio</h1>
               <div className="cursor-pointer">
@@ -70,16 +70,44 @@ const Navbar = () => {
             <div className="flex flex-col items-center px-4 py-4">
               <ul className="text-sky-400 text-lg font-semibold">
                 <Link href="#main">
-                  <li className="py-6">Home</li>
+                  <li
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                    }}
+                    className="py-6"
+                  >
+                    Home
+                  </li>
                 </Link>
                 <Link href="#about">
-                  <li className="py-6">About</li>
+                  <li
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                    }}
+                    className="py-6"
+                  >
+                    About
+                  </li>
                 </Link>
                 <Link href="#skills">
-                  <li className="py-6">Skills</li>
+                  <li
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                    }}
+                    className="py-6"
+                  >
+                    Skills
+                  </li>
                 </Link>
                 <Link href="#contact">
-                  <li className="py-6">Contact</li>
+                  <li
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                    }}
+                    className="py-6"
+                  >
+                    Contact
+                  </li>
                 </Link>
               </ul>
             </div>

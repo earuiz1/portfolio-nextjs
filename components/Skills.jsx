@@ -325,7 +325,7 @@ const Skills = () => {
             Skills
           </h2>
         </div>
-        <div className="flex flex-col max-w-[90%] gap-10 mx-auto py-8">
+        <div className="flex flex-col max-w-[85%] gap-10 my-20 mx-auto">
           <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
             <div className="border-b border-slate-400 py-2 px-2">
               <h3 className="font-bold">Langauges</h3>
