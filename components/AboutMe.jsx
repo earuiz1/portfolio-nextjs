@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import heroImage from "../public/assets/Hero.png";
+import heroImage from "../public/assets/myAvatar.svg";
 
 const AboutMe = () => {
   return (
@@ -34,6 +34,11 @@ const AboutMe = () => {
               such as Unbounce and Microsoft Power Bi and learned a lot about
               web development, website optimization and digital marketing &
               analytics.
+            </p>
+            <p className="text-sm md:text-lg lg:text-xl">
+              Some of my hobbies are: playing video games, reading stuff about
+              the universe, watching/playing soccer, playing with my dogs and
+              listening to music.
             </p>
           </div>
         </div>

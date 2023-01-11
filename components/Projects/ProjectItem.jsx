@@ -39,7 +39,7 @@ const ProjectItem = () => {
     <React.Fragment>
       {projectList.map((project) => {
         return (
-          <div className="relative bg-[#e5e7eb] flex items-center justify-center w-full border border-slate-400 shadow-slate-800 shadow-xl rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
+          <div className="relative bg-[#e5e7eb] flex items-center justify-center w-full border border-slate-400 shadow-slate-800 shadow-xl rounded-xl p-3 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
             <Image
               className="rounded-xl group-hover:opacity-10"
               src={project.image_url}
