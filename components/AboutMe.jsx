@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import heroImage from "../public/assets/myAvatar.svg";
+import { useInView } from "react-intersection-observer";
 
 const AboutMe = () => {
+  const { ref: myRef, inView: isVisible } = useInView();
+
   return (
     <React.Fragment>
       <section id="about">
@@ -11,8 +14,12 @@ const AboutMe = () => {
             About Me
           </h2>
         </div>
-
-        <div className="flex flex-col items-center gap-5 md:flex-row md:justify-center lg:flex-row lg:justify-center mx-4 my-40">
+        <div
+          className={`flex flex-col items-center gap-5 md:flex-row md:justify-center lg:flex-row lg:justify-center mx-4 my-40 transition-all duration-[2000ms] ${
+            isVisible ? "opacity-100 " : "opacity-0"
+          }`}
+          ref={myRef}
+        >
           <Image
             src={heroImage}
             alt="Web Developer Coding"

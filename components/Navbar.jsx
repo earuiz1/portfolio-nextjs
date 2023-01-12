@@ -30,35 +30,35 @@ const Navbar = () => {
         </div>
         <ul className="hidden md:flex lg:flex md:items-center lg:items-center md:gap-3 lg:gap-3">
           <Link href="#main">
-            <li className="text-sky-400 text-base font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+            <li className="text-sky-400 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4 ">
               Home
             </li>
           </Link>
           <Link href="#about">
-            <li className="text-sky-400 text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+            <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
               About Me
             </li>
           </Link>
           <Link href="#skills">
-            <li className="text-sky-400 text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+            <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
               Skills
             </li>
           </Link>
           <Link href="#projects">
-            <li className="text-sky-400 text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+            <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
               Projects
             </li>
           </Link>
           <Link href="#contact">
-            <li className="text-sky-400 text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+            <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
               Contact Me
             </li>
           </Link>
-          <li>
+          {/* <li>
             <button className="bg-slate-100 text-slate-900 px-2 py-2 rounded-xl">
               Resume
             </button>
-          </li>
+          </li> */}
         </ul>
       </div>
       {isMenuOpen && (

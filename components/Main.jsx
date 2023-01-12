@@ -37,7 +37,7 @@ const Main = () => {
         </div>
         <div className="absolute bottom-0 left-2/4 text-slate-50">
           <Link href="#about">
-            <IoIosArrowDown size={35} />
+            <IoIosArrowDown size={35} className="animate-bounce" />
           </Link>
         </div>
       </section>
