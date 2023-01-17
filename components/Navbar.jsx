@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -7,6 +7,7 @@ import logoImg from "../public/assets/logo.svg";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [color, setColor] = useState(false);
 
   const hamburgerIconHandler = () => {
     console.log("Clicked");
@@ -18,54 +19,67 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    const colorHandler = () => {
+      if (window.scrollY >= 100) {
+        setColor(true);
+      } else {
+        setColor(false);
+      }
+    };
+    window.addEventListener("scroll", colorHandler);
+  }, []);
+
   return (
     <React.Fragment>
-      {/* <div className="bg-[#1d3557] flex justify-between align-center px-4 py-4"> */}
-      <div className="absolute w-full flex justify-between align-center px-4 py-4">
-        <div className="flex items-center">
-          <Image src={logoImg} width={40} height={40} />
+      <div
+        className={
+          color
+            ? "fixed bg-[#e5e7eb] w-full h-[80px] shadow-xl z-[100]"
+            : "fixed w-full h-20 z-[100]"
+        }
+      >
+        <div className=" w-full h-full flex justify-between align-center px-4">
+          <div className="flex items-center">
+            <Image src={logoImg} width={35} height={35} />
+          </div>
+          <div className="flex items-center cursor-pointer md:hidden text-slate-800">
+            <GiHamburgerMenu size={25} onClick={hamburgerIconHandler} />
+          </div>
+          <ul className="hidden md:flex lg:flex md:items-center lg:items-center md:gap-3 lg:gap-3">
+            <Link href="#main">
+              <li className="text-sky-400 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+                Home
+              </li>
+            </Link>
+            <Link href="#about">
+              <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+                About Me
+              </li>
+            </Link>
+            <Link href="#skills">
+              <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+                Skills
+              </li>
+            </Link>
+            <Link href="#projects">
+              <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+                Projects
+              </li>
+            </Link>
+            <Link href="#contact">
+              <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+                Contact Me
+              </li>
+            </Link>
+          </ul>
         </div>
-        <div className="flex items-center cursor-pointer md:hidden text-slate-800">
-          <GiHamburgerMenu size={25} onClick={hamburgerIconHandler} />
-        </div>
-        <ul className="hidden md:flex lg:flex md:items-center lg:items-center md:gap-3 lg:gap-3">
-          <Link href="#main">
-            <li className="text-sky-400 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4 ">
-              Home
-            </li>
-          </Link>
-          <Link href="#about">
-            <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
-              About Me
-            </li>
-          </Link>
-          <Link href="#skills">
-            <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
-              Skills
-            </li>
-          </Link>
-          <Link href="#projects">
-            <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
-              Projects
-            </li>
-          </Link>
-          <Link href="#contact">
-            <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
-              Contact Me
-            </li>
-          </Link>
-          {/* <li>
-            <button className="bg-slate-100 text-slate-900 px-2 py-2 rounded-xl">
-              Resume
-            </button>
-          </li> */}
-        </ul>
       </div>
       {isMenuOpen && (
-        <div className="fixed left-0 top-0 w-full h-screen bg-black/70 md:hidden">
-          <div className="fixed left-0 top-0 w-[80%] h-screen bg-[#edf6f9]">
-            <div className="flex justify-between items-center mx-4 py-4 border-b-2 border-gray-400">
-              <Image src={logoImg} width={40} height={40} />
+        <div className="fixed left-0 top-0 w-full h-screen bg-black/70 z-[100] md:hidden">
+          <div className="fixed left-0 top-0 w-[80%] h-screen bg-[#e5e7eb] ease-in duration-300">
+            <div className="flex justify-between items-center mx-4 py-4 border-b  border-slate-800/20">
+              <Image src={logoImg} width={35} height={35} />
               <div className="cursor-pointer">
                 <GrFormClose size={30} onClick={closeIconHandler} />
               </div>

@@ -15,7 +15,7 @@ const AboutMe = () => {
           </h2>
         </div>
         <div
-          className={`flex flex-col items-center gap-5 md:flex-row md:justify-center lg:flex-row lg:justify-center mx-4 lg:my-40 md:my-40 my-20 transition-all duration-[2000ms] ${
+          className={`flex flex-col items-center gap-5 lg:flex-row lg:justify-center mx-4 lg:my-40 my-20 transition-all duration-[2000ms] ${
             isVisible ? "opacity-100 " : "opacity-0"
           }`}
           ref={myRef}
