@@ -1,248 +1,169 @@
 import React from "react";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 import BootstrapIcon from "../public/assets/bootstrap-svgrepo-com.svg";
 import CssIcon from "../public/assets/css-svgrepo-com.svg";
 import JavascriptIcon from "../public/assets/js-svgrepo-com.svg";
 import GithubIcon from "../public/assets/github-svgrepo-com.svg";
-import ExpressIcon from "../public/assets/express-svgrepo-com.svg";
+import ExpressJsIcon from "../public/assets/express-svgrepo-com.svg";
 import FirebaseIcon from "../public/assets/firebase-svgrepo-com.svg";
 import MySQLIcon from "../public/assets/mysql-logo-svgrepo-com.svg";
 import PythonIcon from "../public/assets/python-svgrepo-com.svg";
-import ReactIcon from "../public/assets/react-svgrepo-com.svg";
+import ReactJsIcon from "../public/assets/react-svgrepo-com.svg";
 import MongoDbIcon from "../public/assets/mongodb-svgrepo-com.svg";
 import NodeIcon from "../public/assets/node-js-svgrepo-com.svg";
 import PhpIcon from "../public/assets/php-svgrepo-com.svg";
-import NextjsIcon from "../public/assets/nextjs-svgrepo-com.svg";
+import NextJsIcon from "../public/assets/nextjs-svgrepo-com.svg";
 import HtmlIcon from "../public/assets/html-svgrepo-com.svg";
 import UnbounceIcon from "../public/assets/unbounce-svgrepo-com.svg";
 import JupyterIcon from "../public/assets/jupyter-svgrepo-com.svg";
-import TailwindcssIcon from "../public/assets/tailwindcss-svgrepo-com.svg";
+import TailWindCssIcon from "../public/assets/tailwindcss-svgrepo-com.svg";
 
 const Skills = () => {
-  const languagesList = [
+  const skills = [
     {
       id: Math.random().toString(),
-      icon: <Image src={HtmlIcon} alt="Html Logo" width={50} heigth={50} />,
+      image_src: HtmlIcon,
+      image_alt: "Html Logo",
       name: "HTML",
     },
     {
       id: Math.random().toString(),
-      icon: (
-        <Image
-          src={JavascriptIcon}
-          alt="Javascript Logo"
-          width={50}
-          heigth={50}
-        />
-      ),
+      image_src: JavascriptIcon,
+      image_alt: "Javascript Logo",
       name: "Javascript",
     },
     {
       id: Math.random().toString(),
-      icon: <Image src={CssIcon} alt="CSS Logo" width={50} heigth={50} />,
-      name: "CSS",
+      image_src: CssIcon,
+      image_alt: "Css Logo",
+      name: "Css",
     },
     {
       id: Math.random().toString(),
-      icon: <Image src={PythonIcon} alt="Python Logo" width={50} heigth={50} />,
+      image_src: PythonIcon,
+      image_alt: "Python Logo",
       name: "Python",
     },
     {
       id: Math.random().toString(),
-      icon: <Image src={PhpIcon} alt="PhpIcon Logo" width={50} heigth={50} />,
+      image_src: PhpIcon,
+      image_alt: "Php Logo",
       name: "PHP",
     },
-  ];
-
-  const databasesList = [
     {
       id: Math.random().toString(),
-      icon: <Image src={MySQLIcon} alt="MySQL Logo" width={50} heigth={50} />,
+      image_src: MySQLIcon,
+      image_alt: "MySQL Logo",
       name: "MySQL",
     },
     {
       id: Math.random().toString(),
-      icon: (
-        <Image src={MongoDbIcon} alt="MongoDB Logo" width={50} heigth={50} />
-      ),
-      name: "MongoDB",
+      image_src: MongoDbIcon,
+      image_alt: "MongoDb Logo",
+      name: "MongoDb",
     },
     {
       id: Math.random().toString(),
-      icon: (
-        <Image src={FirebaseIcon} alt="Firebase Logo" width={50} heigth={50} />
-      ),
+      image_src: FirebaseIcon,
+      image_alt: "Firebase Logo",
       name: "Firebase",
     },
-  ];
+    {
+      id: Math.random().toString(),
+      image_src: ReactJsIcon,
+      image_alt: "ReactJs Logo",
+      name: "ReactJs",
+    },
+    {
+      id: Math.random().toString(),
+      image_src: NextJsIcon,
+      image_alt: "NextJs Logo",
+      name: "NextJs",
+    },
+    {
+      id: Math.random().toString(),
+      image_src: NodeIcon,
+      image_alt: "Node Logo",
+      name: "Node",
+    },
+    {
+      id: Math.random().toString(),
+      image_src: ExpressJsIcon,
+      image_alt: "ExpressJs Logo",
+      name: "ExpressJs",
+    },
+    {
+      id: Math.random().toString(),
+      image_src: TailWindCssIcon,
+      image_alt: "TailWindCss Logo",
+      name: "TailWindCss",
+    },
+    {
+      id: Math.random().toString(),
+      image_src: BootstrapIcon,
+      image_alt: "Bootstrap Logo",
 
-  const libraries_frameworks_List = [
-    {
-      id: Math.random().toString(),
-      icon: <Image src={ReactIcon} alt="React Logo" width={50} heigth={50} />,
-      name: "ReactJS",
-    },
-    {
-      id: Math.random().toString(),
-      icon: <Image src={NextjsIcon} alt="NextJS Logo" width={50} heigth={50} />,
-      name: "NextJS",
-    },
-    {
-      id: Math.random().toString(),
-      icon: <Image src={NodeIcon} alt="NodeJS Logo" width={50} heigth={50} />,
-      name: "NodeJS",
-    },
-    {
-      id: Math.random().toString(),
-      icon: (
-        <Image src={ExpressIcon} alt="Express Logo" width={50} heigth={50} />
-      ),
-      name: "ExpressJS",
-    },
-    {
-      id: Math.random().toString(),
-      icon: (
-        <Image
-          src={TailwindcssIcon}
-          alt="Tailwindcss Logo"
-          width={50}
-          heigth={50}
-        />
-      ),
-      name: "Tailwind",
-    },
-    {
-      id: Math.random().toString(),
-      icon: (
-        <Image
-          src={BootstrapIcon}
-          alt="Bootstrap Logo"
-          width={50}
-          heigth={50}
-        />
-      ),
       name: "Bootstrap",
     },
-  ];
-
-  const toolsList = [
     {
       id: Math.random().toString(),
-      icon: <Image src={GithubIcon} alt="Github Logo" width={50} heigth={50} />,
+      image_src: GithubIcon,
+      image_alt: "Github Logo",
+      image_width: 50,
+      image_height: 50,
       name: "Github",
     },
     {
       id: Math.random().toString(),
-      icon: (
-        <Image src={UnbounceIcon} alt="Unbounce Logo" width={50} heigth={50} />
-      ),
+      image_src: UnbounceIcon,
+      image_alt: "Unbounce Logo",
       name: "Unbounce",
     },
     {
       id: Math.random().toString(),
-      icon: (
-        <Image src={JupyterIcon} alt="Jupyter Logo" width={50} heigth={50} />
-      ),
-      name: "Jupyter NB",
+      image_src: JupyterIcon,
+      image_alt: "Jupyter Logo",
+      name: "Jupyter",
     },
   ];
   return (
-    <React.Fragment>
-      <section id="skills">
-        <div className="bg-[#001845] w-full py-4">
-          <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
-            Skills
-          </h2>
-        </div>
-        <div className="flex flex-col max-w-[85%] gap-10 my-20 mx-auto">
-          <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
-            <div className="border-b border-slate-400 py-2 px-2">
-              <h3 className="font-bold">Langauges</h3>
-            </div>
-            <div className="grid grid-rows-2 grid-cols-4 md:grid-rows-1 md:grid-cols-5 lg:grid-rows-1 lg:grid-cols-5 py-8">
-              {languagesList.map((language) => {
-                return (
-                  <div
-                    key={language.id}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    {language.icon}
-                    <span className="text-sm">{language.name}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
-            <div className="border-b border-slate-400 py-2 px-2">
-              <h3 className="font-bold">Databases</h3>
-            </div>
-            <div className="grid grid-rows-1 grid-cols-3 py-8">
-              {databasesList.map((database) => {
-                return (
-                  <div
-                    key={database.id}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    {database.icon}
-                    <span className="text-sm">{database.name}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
-            <div className="border-b border-slate-400 py-2 px-2">
-              <h3 className="font-bold">Libraries & Frameworks</h3>
-            </div>
-            <div className="grid grid-rows-2 grid-cols-4 md:grid-rows-1 md:grid-cols-5 lg:grid-rows-1 lg:grid-cols-6 py-8 gap-y-4">
-              {libraries_frameworks_List.map((lib_fram) => {
-                return (
-                  <div
-                    key={lib_fram.id}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    {lib_fram.icon}
-                    <span className="text-sm">{lib_fram.name}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col bg-[#e5e7eb] border-slate-400 border rounded-md shadow-slate-900 shadow-lg hover:scale-105 ease-in duration-300">
-            <div className="border-b border-slate-400 py-2 px-2">
-              <h3 className="font-bold">Tools & Software</h3>
-            </div>
-            <div className="grid grid-rows-1 grid-cols-3 py-8">
-              {toolsList.map((tool) => {
-                return (
-                  <div
-                    key={tool.id}
-                    className="flex flex-col items-center gap-2"
-                  >
-                    {tool.icon}
-                    <span className="text-sm">{tool.name}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4">
-            {skillList.map((skill) => {
-              return (
-                <div
-                  id={skill.id}
-                  className="flex items-center justify-evenly max-h-[80px] md:min-h-[100px] lg:min-h-[100px] border-2 border-slate-400 rounded-md py-2 shadow-lg shadow-slate-800 hover:-translate-y-1"
-                >
-                  <div>{skill.icon}</div>
-                  <span>{skill.name}</span>
-                </div>
-              );
-            })}
-          </div> */}
-    </React.Fragment>
+    <section id="skills">
+      <div className="bg-[#001845] w-full py-4">
+        <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
+          Skills
+        </h2>
+      </div>
+      <div className="flex w-full py-10 md:py-20 lg:py-40">
+        <Marquee
+          gradient={false}
+          speed={80}
+          pauseOnHover={true}
+          pauseOnClick={true}
+          delay={0}
+          play={true}
+          direction="left"
+          className="py-4"
+        >
+          {skills.map((skill) => {
+            return (
+              <div
+                key={skill.id}
+                className="flex flex-col items-center rounded-md shadow-md shadow-slate-500 p-4 gap-2 mx-8 hover:scale-105 ease-in duration-200"
+              >
+                <Image
+                  src={skill.image_src}
+                  alt={skill.image_alt}
+                  width={100}
+                  height={100}
+                />
+                <span className="font-semibold text-base">{skill.name}</span>
+              </div>
+            );
+          })}
+        </Marquee>
+      </div>
+    </section>
   );
 };
 

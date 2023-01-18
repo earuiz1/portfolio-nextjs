@@ -4,7 +4,9 @@ import heroImage from "../public/assets/myAvatar.svg";
 import { useInView } from "react-intersection-observer";
 
 const AboutMe = () => {
-  const { ref: myRef, inView: isVisible } = useInView();
+  const { ref: myRef, inView: isVisible } = useInView({
+    triggerOnce: true,
+  });
 
   return (
     <React.Fragment>
@@ -30,8 +32,8 @@ const AboutMe = () => {
           <div className="flex flex-col gap-2">
             <p className="text-sm md:text-lg lg:text-xl">
               I am a Computer Science Grad with a Masters in Information
-              Technology from The University of Texas Rio Grande Valley. I have
-              2 years of experience working as a Web Developer/ Digital
+              Technology from The University of Texas Rio Grande Valley and I
+              have 2 years of experience working as a Web Developer/ Digital
               Marketing Assistant at UTRGV.
             </p>
             <p className="text-sm md:text-lg lg:text-xl">

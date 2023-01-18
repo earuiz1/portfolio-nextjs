@@ -35,7 +35,7 @@ const Navbar = () => {
       <div
         className={
           color
-            ? "fixed bg-[#e5e7eb] w-full h-[80px] shadow-xl z-[100]"
+            ? "fixed bg-[#e5e7eb]/40 backdrop-blur-md w-full h-[80px] shadow-xl z-[100]"
             : "fixed w-full h-20 z-[100]"
         }
       >
@@ -48,27 +48,27 @@ const Navbar = () => {
           </div>
           <ul className="hidden md:flex lg:flex md:items-center lg:items-center md:gap-3 lg:gap-3">
             <Link href="#main">
-              <li className="text-sky-400 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
                 Home
               </li>
             </Link>
             <Link href="#about">
-              <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md ">
                 About Me
               </li>
             </Link>
             <Link href="#skills">
-              <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
                 Skills
               </li>
             </Link>
             <Link href="#projects">
-              <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md ">
                 Projects
               </li>
             </Link>
             <Link href="#contact">
-              <li className="text-sky-400 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:underline hover:underline-offset-4 ">
+              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
                 Contact Me
               </li>
             </Link>
