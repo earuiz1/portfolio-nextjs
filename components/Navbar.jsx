@@ -3,7 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrFormClose } from "react-icons/gr";
+import { FaGithubSquare } from "react-icons/fa";
+import { AiFillLinkedin } from "react-icons/ai";
+import { IoIosPaper } from "react-icons/io";
+import { IoIosHome } from "react-icons/io";
 import logoImg from "../public/assets/logo.svg";
+import { BsPersonFill } from "react-icons/bs";
+import { AiFillFolderOpen } from "react-icons/ai";
+import { MdPhone } from "react-icons/md";
+import { MdComputer } from "react-icons/md";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +49,7 @@ const Navbar = () => {
       >
         <div className=" w-full h-full flex justify-between align-center px-4">
           <div className="flex items-center">
-            <Image src={logoImg} width={35} height={35} />
+            <Image src={logoImg} alt="Personal Logo" width={35} height={35} />
           </div>
           <div className="flex items-center cursor-pointer md:hidden text-slate-800">
             <GiHamburgerMenu size={25} onClick={hamburgerIconHandler} />
@@ -76,67 +84,96 @@ const Navbar = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="fixed left-0 top-0 w-full h-screen bg-black/70 z-[100] md:hidden">
-          <div className="fixed left-0 top-0 w-[80%] h-screen bg-[#e5e7eb] ease-in duration-300">
+        <div className="fixed left-0 top-0 w-full h-screen bg-black/70 backdrop-blur-md z-[100] md:hidden">
+          <div className="fixed left-0 top-0 w-[80%] h-screen bg-[#e5e7eb] rounded-br-lg rounded-tr-lg ease-in duration-500">
             <div className="flex justify-between items-center mx-4 py-4 border-b  border-slate-800/20">
-              <Image src={logoImg} width={35} height={35} />
-              <div className="cursor-pointer">
+              <Image src={logoImg} alt="Personal Logo" width={35} height={35} />
+              <div className="cursor-pointer rounded-full p-1 shadow-md shadow-slate-500">
                 <GrFormClose size={30} onClick={closeIconHandler} />
               </div>
             </div>
-            <div className="flex flex-col items-center px-4 py-4">
-              <ul>
-                <Link href="#main">
-                  <li
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                    }}
-                    className="py-6 text-sky-400 text-lg font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4"
-                  >
+            <div className="flex flex-col items-center my-20 gap-10">
+              <Link href="#main">
+                <div
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex gap-2 p-3 rounded-lg shadow-md shadow-slate-500"
+                >
+                  <IoIosHome size={26} />
+                  <span className="text-lg font-semibol text-[#001845]">
                     Home
-                  </li>
-                </Link>
-                <Link href="#about">
-                  <li
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                    }}
-                    className="py-6 text-sky-400 text-lg font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4"
-                  >
+                  </span>
+                </div>
+              </Link>
+              <Link href="#about">
+                <div
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex gap-2 p-3 rounded-lg shadow-md shadow-slate-500"
+                >
+                  <BsPersonFill size={26} />
+                  <span className="text-lg font-semibol text-[#001845]">
                     About
-                  </li>
-                </Link>
-                <Link href="#skills">
-                  <li
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                    }}
-                    className="py-6 text-sky-400 text-lg font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4"
-                  >
+                  </span>
+                </div>
+              </Link>
+              <Link href="#skills">
+                <div
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex gap-2 p-3 rounded-lg shadow-md shadow-slate-500"
+                >
+                  <MdComputer size={26} />
+                  <span className="text-lg font-semibol text-[#001845]">
                     Skills
-                  </li>
-                </Link>
-                <Link href="#projects">
-                  <li
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                    }}
-                    className="py-6 text-sky-400 text-lg font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4"
-                  >
+                  </span>
+                </div>
+              </Link>
+              <Link href="#projects">
+                <div
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex gap-2 p-3 rounded-lg shadow-md shadow-slate-500"
+                >
+                  <AiFillFolderOpen size={26} />
+                  <span className="text-lg font-semibol text-[#001845]">
                     Projects
-                  </li>
-                </Link>
-                <Link href="#contact">
-                  <li
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                    }}
-                    className="py-6 text-sky-400 text-lg font-semibold hover:text-blue-500 hover:underline hover:underline-offset-4"
-                  >
+                  </span>
+                </div>
+              </Link>
+              <Link href="#contact">
+                <div
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex gap-2 p-3 rounded-lg shadow-md shadow-slate-500"
+                >
+                  <MdPhone size={26} />
+                  <span className="text-lg font-semibol text-[#001845]">
                     Contact
-                  </li>
-                </Link>
-              </ul>
+                  </span>
+                </div>
+              </Link>
+              <div className="flex flex-col items-center mt-10 gap-6">
+                <span className="text-xl font-semibold text-sky-500">
+                  Let's Connect
+                </span>
+                <div className="flex gap-4">
+                  <div className="cursor-pointer rounded-full p-2 shadow-md shadow-slate-500">
+                    <FaGithubSquare size={26} />
+                  </div>
+                  <div className="cursor-pointer rounded-full p-2 shadow-md shadow-slate-500">
+                    <AiFillLinkedin size={26} />
+                  </div>
+                  <div className="cursor-pointer rounded-full p-2 shadow-md shadow-slate-500">
+                    <IoIosPaper size={26} />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
