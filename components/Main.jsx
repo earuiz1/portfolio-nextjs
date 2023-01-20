@@ -18,27 +18,33 @@ const Main = () => {
           improve my coding experience and become a better developer.
         </p>
         <div className="flex">
-          <FaGithubSquare size={29} className="cursor-pointer" />
-          <AiFillLinkedin size={30} className="cursor-pointer" />
+          <FaGithubSquare
+            size={29}
+            className="cursor-pointer hover:-translate-y-1"
+          />
+          <AiFillLinkedin
+            size={30}
+            className="cursor-pointer hover:-translate-y-1"
+          />
         </div>
         <div className="flex gap-3">
           <Link href="#about">
-            <button className="bg-[#1d3557] text-slate-100 text-sm py-3 px-2 rounded-lg shadow-slate-800 shadow-md">
+            <button className="bg-[#1d3557] text-slate-100 text-sm py-3 px-2 rounded-lg shadow-slate-800 shadow-md hover:-translate-y-1 hover:bg-slate-800/80">
               Read More
             </button>
           </Link>
           <Link href="#contact">
-            <button className="bg-[#1d3557] text-slate-100 text-sm py-3 px-2 rounded-lg shadow-slate-800 shadow-md">
+            <button className="bg-[#1d3557] text-slate-100 text-sm py-3 px-2 rounded-lg shadow-slate-800 shadow-md hover:-translate-y-1 hover:bg-slate-800/80">
               Contact Me
             </button>
           </Link>
         </div>
       </div>
-      <div className="absolute bottom-0 left-2/4 text-slate-50">
-        <Link href="#about">
+      <Link href="#about">
+        <div className="absolute bottom-0 left-[50%] text-slate-50">
           <IoIosArrowDown size={40} className="animate-bounce" />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </section>
   );
 };
