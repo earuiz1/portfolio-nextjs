@@ -1,18 +1,18 @@
-###[Personal Portfolio Website ](https://portfolio-nextjs-dun-gamma.vercel.app/ "Personal Portfolio Website ")
+# [Personal Portfolio Website ](https://portfolio-nextjs-dun-gamma.vercel.app/ "Personal Portfolio Website ")
 Personal website built with Next.js and Tailwindcss to showcase my web presence, personal story & projects, skills and contact infromation.
 
 The core of this project is finished but there are some style changes and improvements I would like to make.
 
-##Features 
+## Features 
 - Fully Responsive
 - Contact form that allows user to send an email to contact me.
 
-##Built With 
+## Built With 
 - Next.js
 - React
 - Tailwindcss 
 
-##Installation 
+## Installation 
 Clone repo:
 ```bash
 https://github.com/earuiz1/portfolio-nextjs.git
@@ -25,7 +25,7 @@ npm i
 yarn i
 ```
 
-##Getting Started
+## Getting Started
 First, run the development server:
 
 ```bash
