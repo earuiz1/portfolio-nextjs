@@ -1,25 +1,25 @@
 import React from "react";
-import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import BootstrapIcon from "../public/assets/bootstrap-svgrepo-com.svg";
-import CssIcon from "../public/assets/css-svgrepo-com.svg";
-import JavascriptIcon from "../public/assets/js-svgrepo-com.svg";
-import GithubIcon from "../public/assets/github-svgrepo-com.svg";
-import ExpressJsIcon from "../public/assets/express-svgrepo-com.svg";
-import FirebaseIcon from "../public/assets/firebase-svgrepo-com.svg";
-import MySQLIcon from "../public/assets/mysql-logo-svgrepo-com.svg";
-import PythonIcon from "../public/assets/python-svgrepo-com.svg";
-import ReactJsIcon from "../public/assets/react-svgrepo-com.svg";
-import MongoDbIcon from "../public/assets/mongodb-svgrepo-com.svg";
-import NodeIcon from "../public/assets/node-js-svgrepo-com.svg";
-import PhpIcon from "../public/assets/php-svgrepo-com.svg";
-import NextJsIcon from "../public/assets/nextjs-svgrepo-com.svg";
-import HtmlIcon from "../public/assets/html-svgrepo-com.svg";
-import UnbounceIcon from "../public/assets/unbounce-svgrepo-com.svg";
-import JupyterIcon from "../public/assets/jupyter-svgrepo-com.svg";
-import TailWindCssIcon from "../public/assets/tailwindcss-svgrepo-com.svg";
+import Skill_Item from "./Skill_Item";
+import BootstrapIcon from "../../public/assets/bootstrap-svgrepo-com.svg";
+import CssIcon from "../../public/assets/css-svgrepo-com.svg";
+import JavascriptIcon from "../../public/assets/js-svgrepo-com.svg";
+import GithubIcon from "../../public/assets/github-svgrepo-com.svg";
+import ExpressJsIcon from "../../public/assets/express-svgrepo-com.svg";
+import FirebaseIcon from "../../public/assets/firebase-svgrepo-com.svg";
+import MySQLIcon from "../../public/assets/mysql-logo-svgrepo-com.svg";
+import PythonIcon from "../../public/assets/python-svgrepo-com.svg";
+import ReactJsIcon from "../../public/assets/react-svgrepo-com.svg";
+import MongoDbIcon from "../../public/assets/mongodb-svgrepo-com.svg";
+import NodeIcon from "../../public/assets/node-js-svgrepo-com.svg";
+import PhpIcon from "../../public/assets/php-svgrepo-com.svg";
+import NextJsIcon from "../../public/assets/nextjs-svgrepo-com.svg";
+import HtmlIcon from "../../public/assets/html-svgrepo-com.svg";
+import UnbounceIcon from "../../public/assets/unbounce-svgrepo-com.svg";
+import JupyterIcon from "../../public/assets/jupyter-svgrepo-com.svg";
+import TailWindCssIcon from "../../public/assets/tailwindcss-svgrepo-com.svg";
 
-const Skills = () => {
+const Skill_List = () => {
   const skills = [
     {
       id: Math.random().toString(),
@@ -147,18 +147,13 @@ const Skills = () => {
         >
           {skills.map((skill) => {
             return (
-              <div
+              <Skill_Item
                 key={skill.id}
-                className="flex flex-col items-center rounded-md shadow-md shadow-slate-500 p-4 gap-2 mx-8 hover:scale-105 ease-in duration-200"
-              >
-                <Image
-                  src={skill.image_src}
-                  alt={skill.image_alt}
-                  width={100}
-                  height={100}
-                />
-                <span className="font-semibold text-base">{skill.name}</span>
-              </div>
+                id={skill.id}
+                image_src={skill.image_src}
+                image_alt={skill.image_alt}
+                name={skill.name}
+              />
             );
           })}
         </Marquee>
@@ -167,4 +162,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Skill_List;

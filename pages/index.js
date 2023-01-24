@@ -2,7 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import AboutMe from "../components/AboutMe";
 import Main from "../components/Main";
-import Skills from "../components/Skills";
+import Skill_List from "../components/Skills/Skill_List";
 import ContactMe from "../components/ContactMe";
 import ProjectList from "../components/Projects/ProjectList";
 import { ToastContainer } from "react-toastify";
@@ -21,7 +21,7 @@ export default function Home() {
       </nav>
       <Main />
       <AboutMe />
-      <Skills />
+      <Skill_List />
       <ProjectList />
       <ContactMe />
     </div>
