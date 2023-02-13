@@ -1,6 +1,7 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import Skill_Item from "./Skill_Item";
+import Header from "../UI/Header";
 import BootstrapIcon from "../../public/assets/bootstrap-svgrepo-com.svg";
 import CssIcon from "../../public/assets/css-svgrepo-com.svg";
 import JavascriptIcon from "../../public/assets/js-svgrepo-com.svg";
@@ -129,11 +130,7 @@ const Skill_List = () => {
   ];
   return (
     <section id="skills">
-      <div className="bg-[#001845] w-full py-4">
-        <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
-          Skills
-        </h2>
-      </div>
+      <Header title="Skills" />
       <div className="flex w-full py-10 md:py-20 lg:py-40">
         <Marquee
           gradient={false}

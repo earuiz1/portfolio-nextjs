@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import heroImage from "../public/assets/myAvatar.svg";
 import { useInView } from "react-intersection-observer";
+import Header from "./UI/Header";
 
 const AboutMe = () => {
   const { ref: myRef, inView: isVisible } = useInView({
@@ -10,11 +11,7 @@ const AboutMe = () => {
 
   return (
     <section id="about">
-      <div className="bg-[#001845] w-full py-4">
-        <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
-          About Me
-        </h2>
-      </div>
+      <Header title="About Me" />
       <div
         className={`flex flex-col items-center gap-5 lg:flex-row lg:justify-center mx-4 lg:py-40 py-10 transition-all duration-[2000ms] ${
           isVisible ? "opacity-100 " : "opacity-0"

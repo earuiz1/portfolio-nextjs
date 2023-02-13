@@ -38,6 +38,12 @@ const Navbar = () => {
     window.addEventListener("scroll", styleHandler);
   }, []);
 
+  //Disable page scroll if modal is open, otherwise allow it.
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isMenuOpen ? "hidden" : "auto";
+  }, [isMenuOpen]);
+
   return (
     <React.Fragment>
       <div

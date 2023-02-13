@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import ContactImg from "../public/assets/contactWeb.jpeg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { sendContactForm } from "../lib/api";
+import Header from "./UI/Header";
 
 const ContactMe = () => {
   /**
@@ -73,11 +74,7 @@ const ContactMe = () => {
 
   return (
     <section id="contact">
-      <div className="bg-[#001845] w-full py-4">
-        <h2 className="text-slate-100 text-2xl font-semibold md:text-3xl lg:text-4xl px-4">
-          Contact Me
-        </h2>
-      </div>
+      <Header title="Contact Me" />
       {/* Contact Container */}
       <div className="flex justify-center mx-4 my-20">
         <div className="flex flex-col justify-evenly min-w-[320px] lg:flex-row lg:max-w-[70%] bg-[#e5e7eb] border border-slate-400 rounded-md shadow-slate-800 shadow-xl px-6 py-6 md:py-8 md:px-8 lg:py-10 lg:px-10 gap-4 lg:gap-8">
