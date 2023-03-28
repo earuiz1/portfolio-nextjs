@@ -62,27 +62,27 @@ const Navbar = () => {
           </div>
           <ul className="hidden md:flex lg:flex md:items-center lg:items-center md:gap-3 lg:gap-3">
             <Link href="#main">
-              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
+              <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
                 Home
               </li>
             </Link>
             <Link href="#about">
-              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md ">
+              <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md ">
                 About Me
               </li>
             </Link>
             <Link href="#skills">
-              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
+              <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
                 Skills
               </li>
             </Link>
             <Link href="#projects">
-              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md ">
+              <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md ">
                 Projects
               </li>
             </Link>
             <Link href="#contact">
-              <li className="text-[#001845] rounded-full px-3 py-2 shadow-sm shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
+              <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold  hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
                 Contact Me
               </li>
             </Link>

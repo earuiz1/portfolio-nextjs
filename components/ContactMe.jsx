@@ -76,8 +76,8 @@ const ContactMe = () => {
     <section id="contact">
       <Header title="Contact Me" />
       {/* Contact Container */}
-      <div className="flex justify-center mx-4 my-20">
-        <div className="flex flex-col justify-evenly min-w-[320px] lg:flex-row lg:max-w-[70%] bg-[#e5e7eb] border border-slate-400 rounded-md shadow-slate-800 shadow-xl px-6 py-6 md:py-8 md:px-8 lg:py-10 lg:px-10 gap-4 lg:gap-8">
+      <div className="flex justify-center mx-4 xl:py-40 lg:py-30 md:py-20 py-10">
+        <div className="flex flex-col justify-evenly min-w-[320px] lg:flex-row lg:max-w-[70%] bg-[#e1e2e4]  rounded-md shadow-slate-900 shadow-xl px-6 py-6 md:py-8 md:px-8 lg:py-10 lg:px-10 gap-4 lg:gap-8">
           {/* Inner Container 1 */}
           <div className="flex flex-col justify-evenly lg:justify-center gap-4 ">
             <div>

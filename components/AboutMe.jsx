@@ -13,7 +13,7 @@ const AboutMe = () => {
     <section id="about">
       <Header title="About Me" />
       <div
-        className={`flex flex-col items-center gap-5 lg:flex-row lg:justify-center mx-4 lg:py-40 py-10 transition-all duration-[2000ms] ${
+        className={`flex flex-col items-center gap-5 xl:flex-row xl:justify-center mx-4 xl:py-40 lg:py-30 md:py-20 py-10 text-center xl:text-left transition-all duration-[2000ms] ${
           isVisible ? "opacity-100 " : "opacity-0"
         }`}
         ref={myRef}

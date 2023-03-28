@@ -131,7 +131,7 @@ const Skill_List = () => {
   return (
     <section id="skills">
       <Header title="Skills" />
-      <div className="flex w-full py-10 md:py-20 lg:py-40">
+      <div className="flex w-full ">
         <Marquee
           gradient={false}
           speed={80}
@@ -140,7 +140,7 @@ const Skill_List = () => {
           delay={0}
           play={true}
           direction="left"
-          className="py-4"
+          className="bg-[#e5e7eb] xl:py-40 lg:py-30 md:py-20 py-10"
         >
           {skills.map((skill) => {
             return (

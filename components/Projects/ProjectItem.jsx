@@ -7,11 +7,12 @@ const ProjectItem = ({
   image_url,
   image_alt,
   title,
+  language,
   github_link,
   demo_link,
 }) => {
   return (
-    <div className="relative bg-[#e5e7eb] flex items-center justify-center w-full shadow-slate-800 shadow-xl rounded-xl p-3 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
+    <div className="relative bg-[#e1e2e4] flex items-center justify-center w-full shadow-slate-900 shadow-xl rounded-xl p-3 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
       <Image
         className="rounded-xl group-hover:opacity-10"
         src={image_url}
@@ -19,7 +20,7 @@ const ProjectItem = ({
       />
       <div className="hidden group-hover:flex flex-col items-center gap-1 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
         <span className="text-3xl text-slate-100 font-bold">{title}</span>
-        <span className="text-lg text-slate-100">React JS</span>
+        <span className="text-lg text-slate-100">{language}</span>
         <div className="flex gap-2">
           <a
             href={github_link}
