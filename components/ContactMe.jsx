@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import ContactImg from "../public/assets/contactWeb.jpeg";
 import { useFormik } from "formik";
