@@ -134,7 +134,7 @@ const Skill_List = () => {
       <div className="flex w-full ">
         <Marquee
           gradient={false}
-          speed={80}
+          speed={90}
           pauseOnHover={true}
           pauseOnClick={true}
           delay={0}

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import ContactImg from "../public/assets/contactWeb.jpeg";
+import ContactImg from "../../public/assets/contactWeb.jpeg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { sendContactForm } from "../lib/api";
-import Header from "./UI/Header";
+import { sendContactForm } from "../../lib/api";
+import Header from "../UI/Header";
 
 const ContactMe = () => {
   /**
@@ -22,13 +22,13 @@ const ContactMe = () => {
       //Show toast
       toast.success("Message sent!", {
         position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
+        autoClose: 2000,
+        hideProgressBar: true,
         closeOnClick: false,
         pauseOnHover: false,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
       });
 
       setError(null);
@@ -76,7 +76,7 @@ const ContactMe = () => {
       <Header title="Contact Me" />
       {/* Contact Container */}
       <div className="flex justify-center mx-4 xl:py-40 lg:py-30 md:py-20 py-10">
-        <div className="flex flex-col justify-evenly min-w-[320px] lg:flex-row lg:max-w-[70%] bg-[#e1e2e4]  rounded-md shadow-slate-900 shadow-xl px-6 py-6 md:py-8 md:px-8 lg:py-10 lg:px-10 gap-4 lg:gap-8">
+        <div className="flex flex-col justify-evenly min-w-[320px] lg:flex-row lg:max-w-[70%] bg-[#252A33] rounded-md shadow-slate-500 shadow-lg px-6 py-6 md:py-8 md:px-8 lg:py-10 lg:px-10 gap-4 lg:gap-8">
           {/* Inner Container 1 */}
           <div className="flex flex-col justify-evenly lg:justify-center gap-4 ">
             <div>
@@ -88,18 +88,18 @@ const ContactMe = () => {
             </div>
             <div className="flex flex-col gap-4">
               <div>
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
+                <span className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-100">
                   Eliezer Ruiz
-                </h2>
+                </span>
               </div>
               <div>
-                <p className="text-base md:text-lg lg:text-xl font-semibold">
+                <p className="text-base md:text-lg lg:text-xl font-semibold text-slate-100">
                   Web Developer
                 </p>
               </div>
               <div>
-                <p className="text-sm md:text-base md:leading-tight lg:text-lg lg:leading-tight ">
-                  Please free to reach me for any questions, freelance and
+                <p className="text-sm md:text-base md:leading-tight lg:text-lg lg:leading-tight text-slate-100">
+                  Please free to reach me for any questions, freelance or
                   full-time positions.
                 </p>
               </div>
@@ -114,85 +114,89 @@ const ContactMe = () => {
                 </span>
               )}
               <div className="flex flex-col gap-2 mb-2">
-                <label className="text-sm" htmlFor="name">
+                <label
+                  className="text-sm font-semibold text-slate-100"
+                  htmlFor="name"
+                >
                   Name
                 </label>
                 <input
                   type="text"
                   name="name"
-                  className={`border rounded-md py-2 indent-2 ${
-                    formik.errors.name ? "border-red-500" : "border-gray-500"
-                  }`}
+                  className="rounded-md py-2 indent-2 "
+                  onBlur={formik.handleBlur}
                   value={formik.values.name}
                   onChange={formik.handleChange}
                 />
-                {formik.errors.name ? (
-                  <p className="text-sm text-red-500">{formik.errors.name}</p>
-                ) : (
-                  ""
-                )}
+                {formik.touched.name && formik.errors.name ? (
+                  <p className="text-red-700 font-bold text-sm">
+                    {formik.errors.name}
+                  </p>
+                ) : null}
               </div>
               <div className="flex flex-col gap-2 mb-2">
-                <label className="text-sm" htmlFor="email">
+                <label
+                  className="text-sm font-semibold text-slate-100"
+                  htmlFor="email"
+                >
                   Email
                 </label>
                 <input
                   type="email"
                   name="email"
-                  className={`border rounded-md py-2 indent-2 ${
-                    formik.errors.email ? "border-red-500" : "border-gray-500"
-                  }`}
+                  className="rounded-md py-2 indent-2 "
+                  onBlur={formik.handleBlur}
                   value={formik.values.email}
                   onChange={formik.handleChange}
                 />
-                {formik.errors.email ? (
-                  <p className="text-sm text-red-500">{formik.errors.email}</p>
-                ) : (
-                  ""
-                )}
+                {formik.touched.email && formik.errors.email ? (
+                  <p className="text-red-700 font-bold text-sm">
+                    {formik.errors.email}
+                  </p>
+                ) : null}
               </div>
               <div className="flex flex-col gap-2 mb-2">
-                <label className="text-sm" htmlFor="subject">
+                <label
+                  className="text-sm font-semibold text-slate-100"
+                  htmlFor="subject"
+                >
                   Subject
                 </label>
                 <input
                   type="text"
                   name="subject"
-                  className={`border rounded-md py-2 indent-2 ${
-                    formik.errors.subject ? "border-red-500" : "border-gray-500"
-                  }`}
+                  className="rounded-md py-2 indent-2 "
+                  onBlur={formik.handleBlur}
                   value={formik.values.subject}
                   onChange={formik.handleChange}
                 />
-                {formik.errors.subject ? (
-                  <p className="text-sm text-red-500">
+                {formik.touched.subject && formik.errors.subject ? (
+                  <p className="text-red-700 font-bold text-sm">
                     {formik.errors.subject}
                   </p>
-                ) : (
-                  ""
-                )}
+                ) : null}
               </div>
               <div className="flex flex-col gap-2 mb-2">
-                <label className="text-sm" htmlFor="message">
+                <label
+                  className="text-sm font-semibold text-slate-100"
+                  htmlFor="message"
+                >
                   Message
                 </label>
                 <textarea
                   name="message"
                   onChange={formik.handleChange}
                   value={formik.values.message}
-                  className={`resize-none border rounded-md py-2 indent-2 ${
-                    formik.errors.message ? "border-red-500" : "border-gray-500"
-                  }`}
+                  className="rounded-md py-2 indent-2 resize-none"
+                  onBlur={formik.handleBlur}
                   cols="30"
                   rows="4"
                 ></textarea>
-                {formik.errors.message ? (
-                  <p className="text-sm text-red-500">
+                {formik.touched.message && formik.errors.message ? (
+                  <p className="text-red-700 font-bold text-sm">
                     {formik.errors.message}
                   </p>
-                ) : (
-                  ""
-                )}
+                ) : null}
               </div>
               <div className="flex grow mt-4">
                 <button

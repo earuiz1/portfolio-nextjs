@@ -139,10 +139,13 @@ const Navbar = () => {
           <ul className="hidden md:flex lg:flex md:items-center lg:items-center md:gap-3 lg:gap-3">
             {navLinks.map((link) => {
               return (
-                <Link href={link.href} key={link.id}>
-                  <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
+                <Link href={link.href}>
+                  <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold hover:bg-[#252A33] hover:text-slate-100">
                     {link.name}
                   </li>
+                  {/* <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
+                    {link.name}
+                  </li> */}
                 </Link>
               );
             })}

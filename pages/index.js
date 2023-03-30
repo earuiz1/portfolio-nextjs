@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
-import AboutMe from "../components/AboutMe";
-import Main from "../components/Main";
+import AboutMe from "../components/About/AboutMe";
+import Main from "../components/Main/Main";
 import Skill_List from "../components/Skills/Skill_List";
-import ContactMe from "../components/ContactMe";
+import ContactMe from "../components/Contact/ContactMe";
 import ProjectList from "../components/Projects/ProjectList";
 
 export default function Home() {
