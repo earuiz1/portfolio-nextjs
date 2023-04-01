@@ -81,14 +81,17 @@ const Navbar = () => {
   const contactLinks = [
     {
       id: "contact-1",
+      href: "https://github.com/earuiz1",
       icon: <FaGithubSquare size={26} className="text-slate-100" />,
     },
     {
       id: "contact-2",
+      href: "https://www.linkedin.com/in/eliezer-ruiz-torres/",
       icon: <AiFillLinkedin size={26} className="text-slate-100" />,
     },
     {
       id: "contact-3",
+      href: "https://drive.google.com/file/d/1B2CbK3lByJfjf3jeD14Av3XPxVROWja7/view?usp=sharing",
       icon: <IoIosPaper size={26} className="text-slate-100" />,
     },
   ];
@@ -149,6 +152,14 @@ const Navbar = () => {
                 </Link>
               );
             })}
+            <li className="text-slate-100 bg-[#252A33] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold hover:bg-slate-100 hover:text-[#252A33] ">
+              <a
+                href="https://drive.google.com/file/d/1B2CbK3lByJfjf3jeD14Av3XPxVROWja7/view?usp=sharing"
+                target="_blank"
+              >
+                Resume
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -205,7 +216,9 @@ const Navbar = () => {
                       className="bg-[#1d3557] cursor-pointer rounded-full p-3 shadow-md shadow-slate-500 hover:-translate-y-0.5 hover:bg-slate-800/80"
                       key={link.id}
                     >
-                      {link.icon}
+                      <a href={link.href} target="_blank">
+                        {link.icon}
+                      </a>
                     </div>
                   );
                 })}

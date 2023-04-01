@@ -6,7 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Main = () => {
   return (
-    <section className="realtive flex h-screen" id="main">
+    <section className="realtive flex min-h-screen" id="main">
       <div className="flex flex-col justify-center px-4 gap-3">
         <p className="text-xl text-slate-900 font-bold md:text-2xl lg:text-3xl">
           Hi, I'm <span className=" text-blue-500">Eliezer!</span>
@@ -18,14 +18,21 @@ const Main = () => {
           improve my coding experience and become a better developer.
         </p>
         <div className="flex">
-          <FaGithubSquare
-            size={29}
-            className="cursor-pointer hover:-translate-y-1"
-          />
-          <AiFillLinkedin
-            size={30}
-            className="cursor-pointer hover:-translate-y-1"
-          />
+          <a href="https://github.com/earuiz1" target="_blank">
+            <FaGithubSquare
+              size={29}
+              className="cursor-pointer hover:-translate-y-1"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eliezer-ruiz-torres/"
+            target="_blank"
+          >
+            <AiFillLinkedin
+              size={30}
+              className="cursor-pointer hover:-translate-y-1"
+            />
+          </a>
         </div>
         <div className="flex gap-3">
           <Link href="#about">
