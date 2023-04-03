@@ -2,11 +2,9 @@ import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
 import AboutMe from "../components/About/AboutMe";
 import Main from "../components/Main/Main";
-import AlternateMain from "../components/Main/AlternateMain";
 import Skill_List from "../components/Skills/Skill_List";
 import ContactMe from "../components/Contact/ContactMe";
 import ProjectList from "../components/Projects/ProjectList";
-import AlternateNavbar from "../components/Navbar/AlternateNavbar";
 
 export default function Home() {
   return (
@@ -17,11 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
-        {/* <Navbar /> */}
-        <AlternateNavbar />
+        <Navbar />
       </nav>
-      {/* <Main /> */}
-      <AlternateMain />
+      <Main />
       <AboutMe />
       <Skill_List />
       <ProjectList />

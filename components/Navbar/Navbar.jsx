@@ -128,31 +128,38 @@ const Navbar = () => {
       <div
         className={
           secondaryStyle
-            ? "fixed bg-[#e5e7eb]/40 backdrop-blur-md w-full h-[80px] shadow-xl z-[100]"
+            ? "fixed bg-[#252A33]/60 backdrop-blur-md w-full h-[80px] shadow-xl z-[100]"
             : "fixed w-full h-20 z-[100]"
         }
       >
         <div className=" w-full h-full flex justify-between align-center px-4">
           <div className="flex items-center">
-            <Image src={logoImg} alt="Personal Logo" width={35} height={35} />
+            <Image
+              src={logoImg}
+              alt="Personal Logo"
+              width={35}
+              height={35}
+              className="invert"
+            />
           </div>
           <div className="flex items-center cursor-pointer md:hidden">
-            <GiHamburgerMenu size={25} onClick={hamburgerIconHandler} />
+            <GiHamburgerMenu
+              size={25}
+              onClick={hamburgerIconHandler}
+              className="fill-slate-100"
+            />
           </div>
           <ul className="hidden md:flex lg:flex md:items-center lg:items-center md:gap-3 lg:gap-3">
             {navLinks.map((link) => {
               return (
                 <Link href={link.href}>
-                  <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold hover:bg-[#252A33] hover:text-slate-100">
+                  <li className="text-slate-100 rounded-lg px-3 py-2 lg:text-lg md:text-base font-semibold hover:bg-slate-100  hover:text-[#252A33]">
                     {link.name}
                   </li>
-                  {/* <li className="text-[#001845] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold hover:text-blue-500 hover:shadow-blue-500 hover:shadow-md">
-                    {link.name}
-                  </li> */}
                 </Link>
               );
             })}
-            <li className="text-slate-100 bg-[#252A33] rounded-lg px-3 py-2 shadow-md shadow-slate-500 lg:text-lg md:text-base font-semibold hover:bg-slate-100 hover:text-[#252A33] ">
+            <li className="text-[#252A33] bg-slate-100 rounded-lg px-3 py-2 lg:text-lg md:text-base font-semibold hover:bg-slate-900 hover:text-slate-100 ">
               <a
                 href="https://drive.google.com/file/d/1B2CbK3lByJfjf3jeD14Av3XPxVROWja7/view?usp=sharing"
                 target="_blank"
@@ -179,7 +186,7 @@ const Navbar = () => {
         >
           <div className="flex justify-between items-center mx-4 py-4 border-b  border-slate-800/20">
             <Image src={logoImg} alt="Personal Logo" width={35} height={35} />
-            <div className="bg-[#1d3557] cursor-pointer rounded-full p-2 shadow-md shadow-slate-500 hover:-translate-y-0.5 hover:bg-slate-800/80">
+            <div className="bg-[#252A33] cursor-pointer rounded-full p-2 shadow-md shadow-slate-500 hover:-translate-y-0.5 hover:bg-slate-800/80">
               <IoCloseSharp
                 size={26}
                 onClick={closeIconHandler}
@@ -195,10 +202,10 @@ const Navbar = () => {
                     onClick={() => {
                       setIsMenuOpen(false);
                     }}
-                    className="flex items-center gap-2 p-3 bg-[#1d3557] rounded-lg shadow-md shadow-slate-500 hover:-translate-y-1 hover:bg-slate-800/80 "
+                    className="flex items-center gap-2 p-3 bg-[#252A33] rounded-lg shadow-md shadow-slate-500 hover:-translate-y-1 hover:bg-slate-800/80 "
                   >
                     {link.icon}
-                    <span className="text-sm font-semibol text-slate-100">
+                    <span className="text-sm font-semibold text-slate-100">
                       {link.name}
                     </span>
                   </div>
@@ -213,7 +220,7 @@ const Navbar = () => {
                 {contactLinks.map((link) => {
                   return (
                     <div
-                      className="bg-[#1d3557] cursor-pointer rounded-full p-3 shadow-md shadow-slate-500 hover:-translate-y-0.5 hover:bg-slate-800/80"
+                      className="bg-[#252A33] cursor-pointer rounded-full p-3 shadow-md shadow-slate-500 hover:-translate-y-0.5 hover:bg-slate-800/80"
                       key={link.id}
                     >
                       <a href={link.href} target="_blank">
