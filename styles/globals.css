@@ -17,7 +17,7 @@ html{
 }
 
 #main{
-  background-image: url(../public/assets/wave.svg);
+  background-image: url(../public/assets/main_hero.jpeg);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
 }

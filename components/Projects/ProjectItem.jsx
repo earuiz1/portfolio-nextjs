@@ -12,7 +12,7 @@ const ProjectItem = ({
   demo_link,
 }) => {
   return (
-    <div className="relative bg-[#e1e2e4] flex items-center justify-center w-full shadow-slate-900 shadow-xl rounded-xl p-3 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
+    <div className="relative bg-[#e1e2e4] flex items-center justify-center w-full shadow-slate-900 shadow-xl rounded-xl p-3 group hover:bg-gradient-to-r from-[#252A33] to-[#fff]">
       <Image
         className="rounded-xl group-hover:opacity-10"
         src={image_url}
