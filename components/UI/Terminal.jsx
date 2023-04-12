@@ -9,7 +9,7 @@ const Terminal = ({ children, title }) => {
           <span className="rounded-full bg-yellow-500 p-2 self-center"></span>
           <span className="rounded-full bg-green-500 p-2 self-center"></span>
         </div>
-        <span className="text-[#A2A2A2] font-semibold text-lg mx-auto">
+        <span className="hidden md:inline text-[#A2A2A2] font-semibold text-lg mx-auto">
           {title}
         </span>
       </div>

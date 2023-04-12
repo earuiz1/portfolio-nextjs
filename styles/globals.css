@@ -21,3 +21,17 @@ html{
   background-repeat: no-repeat;
   background-position: center;
 }
+
+li:hover span {
+  opacity: 1;
+  animation: underline 0.5s forwards;
+}
+
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

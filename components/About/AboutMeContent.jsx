@@ -5,7 +5,7 @@ import heroImage from "../../public/assets/myAvatar.svg";
 const AboutMeContent = () => {
   return (
     <div className="flex flex-col gap-5 overflow-y-auto">
-      <div className="flex flex-col gap-2 text-slate-100">
+      <div className="flex flex-col gap-2 text-slate-100 text-center">
         <p className="text-sm md:text-lg lg:text-xl font-semibold">
           I am a Computer Science Grad with a Masters in Information Technology
           from The University of Texas Rio Grande Valley and I have 2 years of

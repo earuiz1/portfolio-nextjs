@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaGithubSquare } from "react-icons/fa";
 import { AiFillLinkedin } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
-import { Roll } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import Typist from "react-text-typist";
 
 const Main = () => {
@@ -11,7 +11,7 @@ const Main = () => {
     <section className="h-screen relative" id="main">
       <div className="bg-slate-900/70 flex items-center justify-center w-full h-full">
         <div className=" flex flex-col justify-center items-center gap-5 w-[70%]">
-          <Roll triggerOnce left>
+          <Fade direction="left" triggerOnce duration={2000}>
             <p className="text-3xl text-slate-100 font-bold md:text-4xl lg:text-5xl tracking-wide ">
               Hi, I'm Eliezer!
             </p>
@@ -24,7 +24,7 @@ const Main = () => {
               loop={true}
               typingSpeed={150}
               startDelay={200}
-              className="text-slate-100 text-2xl lg:text-3xl font-semibold"
+              className="text-slate-100 text-xl md:text-2xl lg:text-3xl font-semibold"
             />
             <p className="text-slate-100 text-center text-sm font-medium md:text-lg lg:text-xl tracking-wide ">
               Committed to delivering quality results and exceeding client
@@ -46,7 +46,7 @@ const Main = () => {
                 </button>
               </Link>
             </div>
-          </Roll>
+          </Fade>
         </div>
       </div>
       <div className="absolute left-[8px] top-[50%] transform -translate-y-1/2 flex flex-col">

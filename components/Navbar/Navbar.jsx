@@ -13,68 +13,42 @@ import { AiFillFolderOpen } from "react-icons/ai";
 import { MdPhone } from "react-icons/md";
 import { MdComputer } from "react-icons/md";
 
-const Navbar = () => {
+const AlternateNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [secondaryStyle, setSecondaryStyle] = useState(false);
 
+  const menuHandler = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   const navLinks = [
     {
       id: "nv-1",
       href: "#main",
       name: "Home",
+      icon: <IoIosHome size={24} className="fill-slate-100 " />,
     },
     {
       id: "nv-2",
       href: "#about",
       name: "About Me",
+      icon: <BsPersonFill size={24} className="fill-slate-100 " />,
     },
     {
       id: "nv-3",
       href: "#skills",
       name: "Skills",
+      icon: <MdComputer size={24} className="fill-slate-100 " />,
     },
     {
       id: "nv-4",
       href: "#projects",
       name: "Projects",
+      icon: <AiFillFolderOpen size={24} className="fill-slate-100 " />,
     },
     {
       id: "nv-5",
       href: "#contact",
       name: "Contact",
-    },
-  ];
-
-  const navMobileLinks = [
-    {
-      id: "nv-mobile-1",
-      href: "#main",
-      name: "Home",
-      icon: <IoIosHome size={24} className="text-slate-100" />,
-    },
-    {
-      id: "nv-mobile-2",
-      href: "#about",
-      name: "About Me",
-      icon: <BsPersonFill size={24} className="text-slate-100" />,
-    },
-    {
-      id: "nv-mobile-3",
-      href: "#skills",
-      name: "Skills",
-      icon: <MdComputer size={24} className="text-slate-100" />,
-    },
-    {
-      id: "nv-mobile-4",
-      href: "#projects",
-      name: "Projects",
-      icon: <AiFillFolderOpen size={24} className="text-slate-100" />,
-    },
-    {
-      id: "nv-mobile-5",
-      href: "#contact",
-      name: "Contact Me",
-      icon: <MdPhone size={24} className="text-slate-100" />,
+      icon: <MdPhone size={24} className="fill-slate-100 " />,
     },
   ];
 
@@ -82,160 +56,121 @@ const Navbar = () => {
     {
       id: "contact-1",
       href: "https://github.com/earuiz1",
-      icon: <FaGithubSquare size={26} className="text-slate-100" />,
+      icon: (
+        <FaGithubSquare
+          size={26}
+          className="fill-slate-100 hover:transform hover:translate-x-1/2"
+        />
+      ),
     },
     {
       id: "contact-2",
       href: "https://www.linkedin.com/in/eliezer-ruiz-torres/",
-      icon: <AiFillLinkedin size={26} className="text-slate-100" />,
+      icon: (
+        <AiFillLinkedin
+          size={26}
+          className="fill-slate-100 hover:transform hover:translate-x-1/2"
+        />
+      ),
     },
     {
       id: "contact-3",
       href: "https://drive.google.com/file/d/1B2CbK3lByJfjf3jeD14Av3XPxVROWja7/view?usp=sharing",
-      icon: <IoIosPaper size={26} className="text-slate-100" />,
+      icon: (
+        <IoIosPaper
+          size={26}
+          className="fill-slate-100 hover:transform hover:translate-x-1/2"
+        />
+      ),
     },
   ];
 
-  const hamburgerIconHandler = () => {
-    console.log("Clicked");
-    setIsMenuOpen(true);
-  };
-
-  const closeIconHandler = () => {
-    console.log("Clicked");
-    setIsMenuOpen(false);
-  };
-
-  useEffect(() => {
-    const styleHandler = () => {
-      if (window.scrollY >= 100) {
-        setSecondaryStyle(true);
-      } else {
-        setSecondaryStyle(false);
-      }
-    };
-    window.addEventListener("scroll", styleHandler);
-  }, []);
-
-  //Disable page scroll if modal is open, otherwise allow it.
-  useEffect(() => {
-    const body = document.querySelector("body");
-    body.style.overflow = isMenuOpen ? "hidden" : "auto";
-  }, [isMenuOpen]);
-
   return (
-    <>
-      <div
-        className={
-          secondaryStyle
-            ? "fixed bg-[#252A33]/60 backdrop-blur-md w-full h-[80px] shadow-xl z-[100]"
-            : "fixed w-full h-20 z-[100]"
-        }
-      >
-        <div className=" w-full h-full flex justify-between align-center px-4">
-          <div className="flex items-center">
-            <Image
-              src={logoImg}
-              alt="Personal Logo"
-              width={35}
-              height={35}
-              className="invert"
-            />
-          </div>
-          <div className="flex items-center cursor-pointer md:hidden">
-            <GiHamburgerMenu
+    <div className="fixed bg-slate-900 w-full z-[100]">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center py-6 px-4">
+        <div className="flex flex-row justify-between items-center">
+          <Image
+            src={logoImg}
+            alt="Personal Logo"
+            width={35}
+            height={35}
+            className="invert"
+          />
+          {isMenuOpen ? (
+            <IoCloseSharp
+              onClick={menuHandler}
               size={25}
-              onClick={hamburgerIconHandler}
-              className="fill-slate-100"
+              className="fill-slate-100 cursor-pointer md:hidden"
             />
-          </div>
-          <ul className="hidden md:flex lg:flex md:items-center lg:items-center md:gap-3 lg:gap-3">
-            {navLinks.map((link) => {
-              return (
-                <Link href={link.href}>
-                  <li className="text-slate-100 rounded-lg px-3 py-2 lg:text-lg md:text-base font-semibold hover:bg-slate-100  hover:text-[#252A33]">
-                    {link.name}
-                  </li>
-                </Link>
-              );
-            })}
-            <li className="text-[#252A33] bg-slate-100 rounded-lg px-3 py-2 lg:text-lg md:text-base font-semibold hover:bg-slate-900 hover:text-slate-100 ">
-              <a
-                href="https://drive.google.com/file/d/1B2CbK3lByJfjf3jeD14Av3XPxVROWja7/view?usp=sharing"
-                target="_blank"
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
+          ) : (
+            <GiHamburgerMenu
+              onClick={menuHandler}
+              size={25}
+              className="fill-slate-100 cursor-pointer md:hidden "
+            />
+          )}
         </div>
-      </div>
-      <div
-        className={
-          isMenuOpen
-            ? "fixed left-0 top-0 w-full h-screen bg-black/70 backdrop-blur-md z-[100] md:hidden"
-            : ""
-        }
-      >
-        <div
-          className={
-            isMenuOpen
-              ? "fixed left-0 top-0 w-[80%] h-screen bg-[#e5e7eb] rounded-br-lg rounded-tr-lg ease-in duration-700"
-              : "fixed left-[-100%] top-0 ease-in duration-700"
-          }
-        >
-          <div className="flex justify-between items-center mx-4 py-4 border-b  border-slate-800/20">
-            <Image src={logoImg} alt="Personal Logo" width={35} height={35} />
-            <div className="bg-[#252A33] cursor-pointer rounded-full p-2 shadow-md shadow-slate-500 hover:-translate-y-0.5 hover:bg-slate-800/80">
-              <IoCloseSharp
-                size={26}
-                onClick={closeIconHandler}
-                className="text-slate-100"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col items-center my-20 gap-10">
-            {navMobileLinks.map((link) => {
-              return (
-                <Link href={link.href} key={link.id}>
-                  <div
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                    }}
-                    className="flex items-center gap-2 p-3 bg-[#252A33] rounded-lg shadow-md shadow-slate-500 hover:-translate-y-1 hover:bg-slate-800/80 "
+        {isMenuOpen && (
+          <div classaName="flex flex-row">
+            <ul className="flex flex-col items-center gap-4 relative md:hidden">
+              {navLinks.map((link) => {
+                return (
+                  <Link
+                    onClick={() => menuHandler(false)}
+                    href={link.href}
+                    key={link.id}
                   >
-                    {link.icon}
-                    <span className="text-sm font-semibold text-slate-100">
+                    <li className="text-slate-100 text-sm font-semibold relative">
                       {link.name}
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
-            <div className="flex flex-col items-center mt-10 gap-6">
-              <span className="text-2xl font-semibold text-blue-400">
-                Let's Connect
-              </span>
-              <div className="flex gap-4">
+                      <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-green-600 opacity-0 transition-opacity duration-200 ease-in-out"></span>
+                    </li>
+                  </Link>
+                );
+              })}
+              <div className="absolute left-0 top-[50%] transform -translate-y-1/2 flex flex-col gap-2">
                 {contactLinks.map((link) => {
                   return (
-                    <div
-                      className="bg-[#252A33] cursor-pointer rounded-full p-3 shadow-md shadow-slate-500 hover:-translate-y-0.5 hover:bg-slate-800/80"
-                      key={link.id}
-                    >
+                    <li key={link.id}>
                       <a href={link.href} target="_blank">
                         {link.icon}
                       </a>
-                    </div>
+                    </li>
                   );
                 })}
               </div>
-            </div>
+            </ul>
           </div>
-        </div>
+        )}
+        <ul className="hidden md:flex md:gap-6">
+          {navLinks.map((link) => {
+            return (
+              <Link
+                onClick={() => menuHandler(false)}
+                href={link.href}
+                key={link.id}
+              >
+                <li className="flex text-slate-100 text-sm lg:text-lg md:text-base font-semibold gap-2 relative">
+                  {link.icon}
+                  {link.name}
+                  <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-green-600 opacity-0 transition-opacity duration-200 ease-in-out"></span>
+                </li>
+              </Link>
+            );
+          })}
+          <li className="flex text-slate-100 text-sm lg:text-lg md:text-base font-semibold relative gap-2">
+            <IoIosPaper size={24} className="fill-slate-100 " />
+            <a
+              href="https://drive.google.com/file/d/1B2CbK3lByJfjf3jeD14Av3XPxVROWja7/view?usp=sharing"
+              target="_blank"
+            >
+              Resume
+            </a>
+            <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-green-600 opacity-0 transition-opacity duration-200 ease-in-out"></span>
+          </li>
+        </ul>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Navbar;
+export default AlternateNavbar;

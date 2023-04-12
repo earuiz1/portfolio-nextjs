@@ -4,14 +4,10 @@ import showsImage from "../../public/assets/shows.png";
 import notesImage from "../../public/assets/notes.png";
 import weatherImage from "../../public/assets/weather.png";
 import deliciasImage from "../../public/assets/delicias-ruiz-app.png";
-import { useInView } from "react-intersection-observer";
 import Header from "../UI/Header";
+import { Fade } from "react-awesome-reveal";
 
 const ProjectList = () => {
-  const { ref: myRef, inView: isVisible } = useInView({
-    triggerOnce: true,
-  });
-
   const projects = [
     {
       id: Math.random().toString(),
@@ -54,27 +50,26 @@ const ProjectList = () => {
   return (
     <section id="projects">
       <Header title="Projects" />
-      <div
-        className={`grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:py-40 lg:py-30 md:py-20 py-10 mx-4 gap-y-10 gap-x-8 transition-all duration-[2000ms] ${
-          isVisible ? "opacity-100 " : "opacity-0"
-        }`}
-        ref={myRef}
-      >
-        {projects.map((project) => {
-          return (
-            <ProjectItem
-              key={project.id}
-              id={project.id}
-              image_url={project.image_url}
-              image_alt={project.image_alt}
-              title={project.title}
-              language={project.language}
-              githhub_link={project.github_link}
-              demo_link={project.demo_link}
-            />
-          );
-        })}
-      </div>
+      <Fade direction="left" triggerOnce duration={2000}>
+        <div
+          className={`grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xl:py-40 lg:py-30 md:py-20 py-10 mx-4 gap-y-10 gap-x-8 `}
+        >
+          {projects.map((project) => {
+            return (
+              <ProjectItem
+                key={project.id}
+                id={project.id}
+                image_url={project.image_url}
+                image_alt={project.image_alt}
+                title={project.title}
+                language={project.language}
+                githhub_link={project.github_link}
+                demo_link={project.demo_link}
+              />
+            );
+          })}
+        </div>
+      </Fade>
     </section>
   );
 };
