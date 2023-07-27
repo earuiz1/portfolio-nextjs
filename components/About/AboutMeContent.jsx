@@ -23,11 +23,6 @@ const AboutMeContent = () => {
           excited to continue my career as a web developer and digital marketer,
           and look forward to the challenges and opportunities that lie ahead.
         </p>
-        <p className="text-sm md:text-lg lg:text-xl font-semibold">
-          Some of my hobbies are: playing video games, reading stuff about the
-          universe, watching/playing soccer, playing with my dogs and listening
-          to music.
-        </p>
       </div>
       <div className="flex justify-center w-full h-full">
         <Image

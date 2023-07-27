@@ -23,92 +23,77 @@ import TailWindCssIcon from "../../public/assets/tailwindcss-svgrepo-com.svg";
 const Skill_List = () => {
   const skills = [
     {
-      id: Math.random().toString(),
       image_src: HtmlIcon,
       image_alt: "Html Logo",
       name: "HTML",
     },
     {
-      id: Math.random().toString(),
       image_src: JavascriptIcon,
       image_alt: "Javascript Logo",
       name: "Javascript",
     },
     {
-      id: Math.random().toString(),
       image_src: CssIcon,
       image_alt: "Css Logo",
       name: "Css",
     },
     {
-      id: Math.random().toString(),
       image_src: PythonIcon,
       image_alt: "Python Logo",
       name: "Python",
     },
     {
-      id: Math.random().toString(),
       image_src: PhpIcon,
       image_alt: "Php Logo",
       name: "PHP",
     },
     {
-      id: Math.random().toString(),
       image_src: MySQLIcon,
       image_alt: "MySQL Logo",
       name: "MySQL",
     },
     {
-      id: Math.random().toString(),
       image_src: MongoDbIcon,
       image_alt: "MongoDb Logo",
       name: "MongoDb",
     },
     {
-      id: Math.random().toString(),
       image_src: FirebaseIcon,
       image_alt: "Firebase Logo",
       name: "Firebase",
     },
     {
-      id: Math.random().toString(),
       image_src: ReactJsIcon,
       image_alt: "ReactJs Logo",
       name: "ReactJs",
     },
     {
-      id: Math.random().toString(),
       image_src: NextJsIcon,
       image_alt: "NextJs Logo",
       name: "NextJs",
     },
     {
-      id: Math.random().toString(),
       image_src: NodeIcon,
       image_alt: "Node Logo",
       name: "Node",
     },
     {
-      id: Math.random().toString(),
       image_src: ExpressJsIcon,
       image_alt: "ExpressJs Logo",
       name: "ExpressJs",
     },
     {
-      id: Math.random().toString(),
       image_src: TailWindCssIcon,
       image_alt: "TailWindCss Logo",
       name: "TailWindCss",
     },
     {
-      id: Math.random().toString(),
       image_src: BootstrapIcon,
       image_alt: "Bootstrap Logo",
 
       name: "Bootstrap",
     },
     {
-      id: Math.random().toString(),
       image_src: GithubIcon,
       image_alt: "Github Logo",
       image_width: 50,
@@ -116,13 +101,11 @@ const Skill_List = () => {
       name: "Github",
     },
     {
-      id: Math.random().toString(),
       image_src: UnbounceIcon,
       image_alt: "Unbounce Logo",
       name: "Unbounce",
     },
     {
-      id: Math.random().toString(),
       image_src: JupyterIcon,
       image_alt: "Jupyter Logo",
       name: "Jupyter",
@@ -140,13 +123,12 @@ const Skill_List = () => {
           delay={0}
           play={true}
           direction="left"
-          className="bg-[#e5e7eb] xl:py-40 lg:py-30 md:py-20 py-10"
+          className="bg-[#e5e7eb] xl:py-40 lg:py-30 py-20"
         >
-          {skills.map((skill) => {
+          {skills.map((skill, index) => {
             return (
               <Skill_Item
-                key={skill.id}
-                id={skill.id}
+                key={index}
                 image_src={skill.image_src}
                 image_alt={skill.image_alt}
                 name={skill.name}

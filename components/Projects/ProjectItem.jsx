@@ -19,8 +19,8 @@ const ProjectItem = ({
         alt={image_alt}
       />
       <div className="hidden group-hover:flex flex-col items-center gap-2 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-        <span className="text-3xl text-slate-100 font-bold">{title}</span>
-        <span className="text-base text-slate-100 semibold italic">
+        <span className="text-2xl text-slate-100 font-bold text-center">{title}</span>
+        <span className="text-sm text-slate-100 semibold italic text-center">
           {language}
         </span>
         <div className="flex gap-2">
